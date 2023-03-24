@@ -1,10 +1,11 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image
-img: assets/img/3.jpg
+title: Retinal Disease
+description: Semi-Supervised Learning for an image classification problem
+img: assets/img/project2_pic.PNG
 importance: 2
 category: work
+redirect: https://unsplash.com
 ---
 
 Every project has a beautiful feature showcase page.
