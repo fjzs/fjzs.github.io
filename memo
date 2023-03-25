@@ -1,2 +1,8 @@
-# To launch in localhost type in terminal:
-> bundle exec jekyll serve
+# To launch in localhost type in terminal (on master branch):
+> bundle exec jekyll serve (on master branch)
+
+# Save changes before deployment (on master branch):
+> git add + commit + push
+
+# Deploy (on master branch)
+> bin/deploy --user
