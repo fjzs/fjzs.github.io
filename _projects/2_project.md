@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Retinal Disease
-description: Semi-Supervised Learning for an image classification problem
+description: Semi-Supervised Learning to detect retinal diseases
 img: assets/img/project2_pic.PNG
 importance: 2
-category: work
-redirect: https://unsplash.com
+category: Courses
+redirect: https://github.com/fjzs/Retinal_Disease_Detection
 ---
 
 Every project has a beautiful feature showcase page.

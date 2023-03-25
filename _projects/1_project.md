@@ -1,11 +1,11 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
-img: assets/img/12.jpg
+title: Distracted Driver
+description: Detecting distracted drivers from images
+img: assets/img/project1_pic.PNG
 importance: 1
-category: work
-redirect: https://unsplash.com
+category: Personal
+redirect: https://github.com/fjzs/DistractedDriver
 ---
 
 Every project has a beautiful feature showcase page.
