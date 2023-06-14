@@ -7,5 +7,5 @@
 # Save changes before deployment (on master branch):
 > git add + commit + push
 
-# Deploy (on master branch, from gitbash)
+# Deploy (on master branch, from gitbash, not windows powershell)
 > bin/deploy --user
