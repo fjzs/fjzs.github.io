@@ -2,7 +2,7 @@
 layout: page
 title: NBA Detector
 description: Object Detection for NBA YouTube videos
-img: assets/img/nba_00.PNG
+img: assets/img/nba/nba_00.png
 importance: 1
 ---
 
