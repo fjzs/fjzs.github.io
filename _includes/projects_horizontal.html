@@ -5,19 +5,19 @@
   <a href="{{ project.url | relative_url }}">
   {%- endif -%}
     <div class="card hoverable">
-      <div class="row g-0">
+      <div class="row g-0"> <!--Original value: "row g-0"-->
         {%- if project.img -%}
-        <div class="card-img col-md-6">
+        <div class="card-img col-md-12"> <!--Original value: "card-img col-md-6"-->
           {% include figure.html path=project.img alt="project thumbnail" %}
         </div>
-        <div class="col-md-6">
+        <div class="col-md-20"> <!--Original value: "col-md-6"-->
         {%- else -%}
-        <div class="col-md-12">
+        <div class="col-md-12"> <!--Original value: "col-md-12"-->
         {%- endif -%}
           <div class="card-body">
-            <h3 class="card-title text-lowercase">{{ project.title }}</h3>
+            <h3 class="card-title">{{ project.title }}</h3> <!--Original value: "card-title text-lowercase"-->
             <p class="card-text">{{ project.description }}</p>
-            <div class="row ml-1 mr-1 p-0">
+            <div class="row ml-1 mr-1 p-0"> <!--Original value: "row ml-1 mr-1 p-0"-->
               {%- if project.github -%}
               <div class="github-icon">
                 <div class="icon" data-toggle="tooltip" title="Code Repository">

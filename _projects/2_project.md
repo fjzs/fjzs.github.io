@@ -3,7 +3,7 @@ layout: page
 title: Retinal Disease
 description: Semi-Supervised Learning to detect retinal diseases
 img: assets/img/project2_pic.PNG
-importance: 2
+importance: 4
 category: Courses
 redirect: https://github.com/fjzs/Retinal_Disease_Detection
 ---

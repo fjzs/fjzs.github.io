@@ -5,8 +5,8 @@ permalink: /projects/
 description: Some of my personal and course-related projects
 nav: true
 nav_order: 2
-display_categories: [Personal, Courses]
-horizontal: false
+#display_categories: [Personal, Courses]
+horizontal: True
 ---
 
 <!-- pages/projects.md -->
@@ -20,7 +20,7 @@ horizontal: false
   <!-- Generate cards for each project -->
   {% if page.horizontal -%}
   <div class="container">
-    <div class="row row-cols-2">
+    <div class="row row-cols-2"> <!--Original value: "row row-cols-2"-->
     {%- for project in sorted_projects -%}
       {% include projects_horizontal.html %}
     {%- endfor %}

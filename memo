@@ -1,3 +1,6 @@
+# Run in a terminal opened in the folder, not within Visual Studio Code
+> bundle install
+
 # To launch in localhost type in terminal (on master branch):
 > bundle exec jekyll serve
 
