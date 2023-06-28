@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Machine Learning Engineer      zenteno.fco@gmail.com
+subtitle: Machine Learning Engineer - zenteno.fco@gmail.com
 
 profile:
   align: right
@@ -17,7 +17,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 <br>
-Hi! I am an engineer with +8 years of experience and a former entrepreneur. I am currently a first-year Master Student in Computer Science at [UCSD](https://cse.ucsd.edu/) :mortar_board:. I have interests in the intersection between Software Engineering + Deep Learning + Computer Vision.
+Hi! I am an engineer with +8 years of experience and a former entrepreneur. I am currently a second-year Master Student in Computer Science at [UCSD](https://cse.ucsd.edu/) :mortar_board:, with an expected graduation on June 2024. I like to build **Computer Vision** models using **Deep Learning** with good **Software Engineering** principles.
 
 <br>
 ### **Technical Skills**
@@ -27,7 +27,7 @@ Languajes: Python, Java, C#, Rust, C, SQL, AMPL
 
 <br>
 ### **Non-technical Skills**
-Problem structuring, Communication, Leadership, Ability to work with multidisciplinary teams.
+Problem structuring, Communication, Leadership, Negotiation, Ability to work with multidisciplinary teams.
 
 <br>
 ### **Awards**
@@ -37,11 +37,11 @@ Awarded to complete my Master program at UCSD
 
 ##### :trophy: Top 4% in Kaggle Competition (2016)
 Kaggle\
-'Santa Stolen Sleigh' was a huge NP-Hard problem with more than 1000 participants
+'Santa Stolen Sleigh' was a huge NP-Hard problem related to a Vehicle Routing Problem with capacity constraints. I designed a meta-heuristic based on Simulated Annealing (in C#) and run it on a server. Got position #40 among 1000 participants.
 
 ##### :trophy: GOCup 3rd place (2014)
 Complex Engineering Systems Institute\
-Competition to solve a NP-Hard problem with more than 500 graduate students partipants
+Competition to solve a NP-Hard problem with more than 500 graduate students partipants. I designed a meta-heuristic based on Tabu Search for a Vehicle Routing Problem with Time Windows.
 
 ##### :trophy: Best Teaching Assistant (2013)
 Transport and Logistics Department, School of Engineering, Pontifical Catholic University of Chile\
