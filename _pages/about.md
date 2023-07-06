@@ -17,7 +17,10 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 <br>
-Hi! I am an engineer with +8 years of experience and a former entrepreneur. I am currently a second-year Master Student in Computer Science at [UCSD](https://cse.ucsd.edu/) :mortar_board:, with an expected graduation on June 2024. I like to build **Computer Vision** models using **Deep Learning** with good **Software Engineering** principles.
+Hi! I am an engineer with +8 years of experience and a former entrepreneur. I am currently a second-year Master Student in Computer Science at [UCSD](https://cse.ucsd.edu/) :mortar_board:, with an expected graduation on June 2024.
+
+<br>
+I like to solve industry problems mixing tools from **Computer Vision** and **Deep Learning** with good **Software Engineering** principles.
 
 <br>
 ### **Technical Skills**
@@ -28,6 +31,15 @@ Languajes: Python, Java, C#, Rust, C, SQL, AMPL
 <br>
 ### **Non-technical Skills**
 Problem structuring, Communication, Leadership, Negotiation, Ability to work with multidisciplinary teams.
+
+<br>
+### **News**
+#### June 2023: CVPR in Vancouver
+I attended my first AI conference, where I had the opportunity to witness firsthand the direction in which the forefront of Computer Vision research is heading.
+<!-- ![CVPR image of me](./assets/img/CVPR.jpeg)-->
+<p align="center">
+<img src="./assets/img/CVPR.jpg" alt="CVPR image of me" width="600" height="445">
+</p>
 
 <br>
 ### **Awards**
