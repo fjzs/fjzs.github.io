@@ -1,6 +1,6 @@
 ---
 layout: page
-title: NBA Detector
+title: NBA Detector (2023)
 description: Object Detection for NBA YouTube videos
 img: assets/img/nba/nba_00.png
 importance: 1

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Retinal Disease
+title: Retinal Disease (2021)
 description: Semi-Supervised Learning to detect retinal diseases
 img: assets/img/project2_pic.PNG
 importance: 4

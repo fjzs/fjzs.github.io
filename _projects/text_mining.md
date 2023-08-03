@@ -1,6 +1,6 @@
 ---
 layout: page
-title: A picture is worth 1k words
+title: A picture is worth 1k words (2023)
 description: Text-to-image models for large documents
 img: assets/img/text_mining/tm_15.png
 importance: 2
