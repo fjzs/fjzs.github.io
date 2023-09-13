@@ -1,16 +1,27 @@
 ---
 layout: page
-title: Self-Driving Cars Specialization (2023)
-description: Here I present some problems I solved in this specialization from Coursera
+title: Visual Odometry (2023)
+description: Computing Visual Odometry for Self-Driving Cars
 img: assets/img/self_driving_cars/thumbnail.jpeg
 importance: 1
 ---
 
+This is the Visual Odometry Lab from the Self-Driving Cars Specialization from Coursera.
+
 Project repository: <https://github.com/fjzs/VisualOdometry>
 
-### **Visual Odometry Lab**
-Visual Odometry is the task of estimating the position of an agent over time by using visual information. In this
-lab we had to estimate the trajectory of a car given:
+### **What is Visual Odometry?**
+
+<div class="row"><div class="col-sm mt-3 mt-md-0 text-center">
+    {% include figure.html path="assets/img/self_driving_cars/Intro.png" class="img-fluid rounded z-depth-1" width=800%}
+</div></div>
+
+
+Visual Odometry is the task of estimating the relative ego-motion from images. The output is a rigid body transformation 
+$$R|t$$ with 6 degrees of freedom. Because this task yields **relative motion estimates** (not global position with respect to a map), it is sensitive to error acumulation over time. This is why it is said to be precise locally only.
+
+
+In this lab we had to estimate the trajectory of a car given:
 * $$T$$ consecutive RGB images (from CARLA simulator) taken by the car at every time step $$t\in{1,2,...,T}$$
 * Depth information for every image (every pixel indicates the length in meters to that point)
 * Intrinsic camera parametrs $$K$$.
