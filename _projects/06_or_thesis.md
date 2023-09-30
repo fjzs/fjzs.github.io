@@ -8,5 +8,5 @@ importance: 6
 
 Project repository: <https://github.com/fjzs/miningTrucksScheduling>
 
-Slides coming soon...
+You can see the presentation here: <https://github.com/fjzs/miningTrucksScheduling/blob/main/Presentation.pdf>
 
