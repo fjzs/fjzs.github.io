@@ -17,23 +17,25 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 <br>
-Hi! I am an engineer with +8 years of experience and a former entrepreneur. I am currently a second-year Master Student in Computer Science at [UCSD](https://cse.ucsd.edu/) :mortar_board:, with an expected graduation on June 2024.
-
-<br>
-I like to solve industry problems mixing tools from **Computer Vision** and **Deep Learning** with good **Software Engineering** principles.
+I am an engineer with +8 years of experience in applied mathematics for industries such as retail, manufacturing and healthcare. I have outstanding communication abilities, problem-solving skills, a growth-oriented mindset, and the ability to work and lead multidisciplinary teams. I am polishing my computer science skills by getting a Master's degree at UCSD, where I am concentrating on Machine Learning, AI and Computer Vision. Looking forward to applying my experience in problem-solving and my computer science skills to solve real-world problems.
 
 <br>
 ### **Technical Skills**
-Mathematical Modelling: Deep Learning, Integer Programming, Simulation <br>
-Softwares: Tensorflow, Pytorch, CPLEX <br>
-Languajes: Python, Java, C#, Rust, C, SQL, AMPL
+Mathematical Modelling: Deep Learning, Machine Learning, Computer Vision, Optimization, Simulation <br>
+Softwares: Tensorflow, Pytorch <br>
+Languajes: Python, Java, C#, Rust, SQL, AMPL
 
 <br>
 ### **Non-technical Skills**
-Problem structuring, Communication, Leadership, Negotiation, Ability to work with multidisciplinary teams.
+Problem solving, Communication, Leadership, Negotiation, Multidisciplinary team-working.
 
 <br>
 ### **News**
+
+#### October 2023: Joined Professor Nikolay Atasanov Lab
+Started to work on a cool project related to estimating simultaneouly the pose, shape and material of an object. This could be
+used for downstream robotic applications.
+
 #### June 2023: CVPR in Vancouver
 I attended my first AI conference, where I had the opportunity to witness firsthand the direction in which the forefront of Computer Vision research is heading.
 <!-- ![CVPR image of me](./assets/img/CVPR.jpeg)-->
