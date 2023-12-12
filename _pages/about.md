@@ -17,24 +17,20 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 <br>
-I am a data scientist with +6 years of experience in applied mathematics in industries such as retail, manufacturing and healthcare. I have outstanding communication abilities, problem-solving skills, a growth-oriented mindset, and the ability to work and lead multidisciplinary teams. I am polishing my computer science skills by getting a Master's degree at UCSD, where I am concentrating on Machine Learning, AI and Computer Vision. Looking forward to applying my experience in problem-solving and my computer science skills to solve real-world problems.
+I am a data scientist with 6+ years of experience applying operations research within diverse sectors such as retail, manufacturing, and healthcare. I have a business-oriented mindset, outstanding communication, problem-solving skills and the capacity to work with multidisciplinary teams.
+
+I am pursuing a Master's in Computer Science to integrate the best software development principles with mathematical modeling techniques to improve project success.
 
 <br>
 ### **Technical Skills**
-Mathematical Modelling: Deep Learning, Machine Learning, Computer Vision, Optimization, Simulation, Algorithms <br>
-Softwares: Tensorflow, Pytorch <br>
-Languajes: Python, Java, C#, SQL, AMPL
-
-<br>
-### **Non-technical Skills**
-Problem solving, Communication, Leadership, Negotiation, Multidisciplinary team-working, Project Management.
+**Operations Research**: Optimization (linear programming, mixed-integer programming, metaheuristics) and discrete-event simulation <br>
+**Programming Languages**: Python, Java, C#, SQL, AMPL <br>
+**Software-related**: CPLEX, Gurobi, Arena Simulation Software, Numpy, Pandas, PyTorch, TensorFlow, OpenCV, Git, Linux, ROS.<br>
+**Machine Learning**: Regression and classification<br>
+**Computer Vision**: Tasks in 2D like image classification, object detection and semantic segmentation.
 
 <br>
 ### **News**
-
-#### October 2023: Joined Professor Nikolay Atasanov Lab
-Started to work on a cool project related to estimating simultaneouly the pose, shape and material of an object from RGBD data. This could be
-used for downstream robotic applications.
 
 #### June 2023: CVPR in Vancouver
 I attended my first AI conference, where I had the opportunity to witness firsthand the direction in which the forefront of Computer Vision research is heading.
