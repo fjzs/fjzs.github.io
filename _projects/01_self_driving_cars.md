@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Visual Odometry (2023)
+title: Visual Odometry
 description: Computing Visual Odometry for Self-Driving Cars
 img: assets/img/self_driving_cars/thumbnail.jpeg
 importance: 1

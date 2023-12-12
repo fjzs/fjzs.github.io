@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Distracted Driver (2022)
+title: Distracted Driver
 description: Detecting distracted drivers from images
 img: assets/img/project1_pic.PNG
 importance: 4

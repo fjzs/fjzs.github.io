@@ -1,6 +1,6 @@
 ---
 layout: page
-title: NBA Detector (2023)
+title: NBA Detector
 description: Players, Ball and Rim Detection from NBA YouTube Highlight Scrapped Videos
 img: assets/img/nba/asd.png
 importance: 2

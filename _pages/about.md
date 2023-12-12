@@ -19,7 +19,7 @@ social: true  # includes social icons at the bottom of the page
 <br>
 I am a data scientist with 6+ years of experience applying operations research within diverse sectors such as retail, manufacturing, and healthcare. I have a business-oriented mindset, outstanding communication, problem-solving skills and the capacity to work with multidisciplinary teams.
 
-I am pursuing a Master's in Computer Science to integrate the best software development principles with mathematical modeling techniques to improve project success.
+I am pursuing a Master's in Computer Science to integrate the best software development principles to mathematical modeling techniques to improve project success.
 
 <br>
 ### **Technical Skills**
