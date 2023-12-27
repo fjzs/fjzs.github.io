@@ -3,7 +3,7 @@ layout: page
 title: Visual Odometry
 description: Computing Visual Odometry for Self-Driving Cars
 img: assets/img/self_driving_cars/thumbnail.jpeg
-importance: 1
+importance: 4
 ---
 
 This is the Visual Odometry Lab from the Self-Driving Cars Specialization from Coursera.

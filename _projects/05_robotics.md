@@ -3,7 +3,7 @@ layout: page
 title: Designing a mini Roomba
 description: Perception, planning and controls for mobile robotics in 2D
 img: assets/img/robotics/robo_front.png
-importance: 1
+importance: 3
 ---
 
 This project is part of the course "Introduction to Robotics" taught by professor Henrik Christensen in the Computer Science Department at UC San Diego. Link of the course is here: <http://www.hichristensen.net/CSE276A-23/index.html>
