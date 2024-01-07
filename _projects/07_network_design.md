@@ -8,6 +8,8 @@ importance: 2
 
 This is a personal project inspired by professor and friend Armin Lüer <https://scholar.google.com/citations?user=9F69pKwAAAAJ>.
 
+Repository here: <https://github.com/fjzs/turkey_network>
+
 ## **1 Problem Definition**
 Hubs location problems fall within the broad category of network design problems. A hub is tipically used passenger
 transportaion, cargo industry, mail delivery (before e-mail was invented though), among others. The role of a hub is to
@@ -60,9 +62,9 @@ $$X_{ilj}$$: flow from node $$i$$ going through hub $$l$$ to destination $$j$$, 
 
 $$R_{kl}$$: 1 if hub $$k$$ is connected to hub $$l$$ else 0, $$\forall k \in N, l \in N: k \neq l$$ (unitless)
 
-$$DHH_k$$: departure time of hub $$k$$ to transport cargo to other hubs, $$\forall k \in N$$ (h)
+$$D^{h}_k$$: departure time from hub $$k$$ to transport cargo to other hubs, $$\forall k \in N$$ (h)
 
-$$DHD_k$$: departure time of hub $$k$$ to transport cargo to destinations, $$\forall k \in N$$ (h)
+$$D^{c}_k$$: departure time from hub $$k$$ to transport cargo to customers, $$\forall k \in N$$ (h)
 
 $$A_j$$: latest arrival time to destination $$j$$, $$\forall j \in N$$ (h)
 
@@ -148,20 +150,22 @@ $$2R_{kl} \leq Z_{kk} + Z_{ll}$$
 $$\forall k \in N, l \in N: k \neq l$$
 
 
-(9) Plane departuring from hub $$k$$ to other hubs must wait cargo from customers:
+(9) Plane departuring from hub $$k$$ to other hubs must wait for cargo from customers:
 
-$$DHH_k \geq tt_{ik} \cdot Z_{ik}$$
+$$D^{h}_k \geq tt_{ik} \cdot Z_{ik}$$
 
 $$\forall i \in N, k \in N: i \neq k$$
     
 
 (10) Truck departure time from hub $$l$$ to its customers must wait for incoming air cargo from other hubs:
 
-$$DHD_l \geq (DHH_k + tp_{kl}) \cdot R_{kl}$$
+Original non-linear:
+
+$$D^{c}_l \geq (D^{h}_k + tp_{kl}) \cdot R_{kl}$$
 
 When linearized:
 
-$$DHD_l \geq DHH_k + tp_{kl} - M(1 - R_{kl})$$
+$$D^{c}_{l} \geq D^{h}_k + tp_{kl} - M(1 - R_{kl})$$
 
 Where $$M$$ is a large enough number, in this case $$M = \beta$$.
 
@@ -170,29 +174,67 @@ $$\forall k \in N, l \in N$$
 
 (11) Truck departure time from hub $$l$$ to its customer $$j$$ must wait from all customers to consolidate cargo (this is required for the case when a single hub is located to the network).
 
-$$DHD_l \geq tt_{jl} \cdot Z_{jl}$$
+$$D^{c}_{l} \geq tt_{jl} \cdot Z_{jl}$$
 
 $$\forall j \in N, l \in N$$
 
 
-(12) Latest arrival to destination $$j$$ depends on the latest airplane arriving to its assigned hub $$l$$:
+(12) Latest arrival to customer $$j$$ depends on the latest airplane arriving to its assigned hub $$l$$:
 
-$$ A_j \geq (DHD_l + tt_{lj}) \cdot Z_{jl}$$
+Original non-linear:
+
+$$ A_j \geq (D^{c}_{l} + tt_{lj}) \cdot Z_{jl}$$
 
 When linearized:
 
-$$ A_j \geq DHD_l + tt_{lj} - M(1 - Z{jl})$$
+$$ A_j \geq D^{c}_{l} + tt_{lj} - M(1 - Z{jl})$$
 
 Where $$M$$ is a large enough number, in this case $$M = \beta$$.
 
 $$\forall j \in N, l \in N$$  
         
 
-(13) Latest arrival to destination $$j$$ complies with service level:
+(13) Latest arrival to destination $$j$$ satisfies the service level:
 
 $$A_j \leq \beta$$
 
 $$\forall j \in N$$ 
+
+
+### Toy example to visualize variables relations
+
+Let's look at a little example of **5 nodes** to understand visually how they interact. We will take a look at 3 types of variables: hub decisions, flow decisions and timing decisions. In the figure below we start with the hub decisions.
+
+<div class="row"><div class="col-sm mt-3 mt-md-0 text-center">
+    {%
+        include figure.html path="assets/img/network_design/example_hubs.png" 
+        class = "img-fluid rounded z-depth-1"
+        width = 700
+        caption = "In this diagram you can see the network was organized with 2 hubs (nodes 3 and 4)."
+    %}
+</div></div>
+
+Now we can move forward with flow decisions. Remember the flow is modeled as a multi-commodity problem, where each origin is a commodity. In the figure below you can see how the flow from each origin moves through the network.
+
+<div class="row"><div class="col-sm mt-3 mt-md-0 text-center">
+    {%
+        include figure.html path="assets/img/network_design/example_flow.png" 
+        class = "img-fluid rounded z-depth-1"
+        width = 1500
+        caption = "In this diagram you can see how each origin (I painted with red, blue and green the nodes the supply flow to the network) transports its flow. Recall that this is an uncapacitated problem, so there are no capacity constraints in the arcs of the graph."
+    %}
+</div></div>
+
+Finally we can see the timing decisions in the next figure. From this example we can conclude that the fastest delivery time is 18 time units.
+
+<div class="row"><div class="col-sm mt-3 mt-md-0 text-center">
+    {%
+        include figure.html path="assets/img/network_design/example_timing.png" 
+        class = "img-fluid rounded z-depth-1"
+        width = 1500
+        caption = "In this diagram you can see how the timings are organized. Recall that the freight between non-hub nodes and hubs is supposed to be done in a cheap and slow mode (like trucks), and the freight between hubs in an expensive and fast mode (like airplanes). The number on each arc represent the time needed to traverse it by the defined transportation mode."
+    %}
+</div></div>
     
 
     
