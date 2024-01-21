@@ -3,7 +3,7 @@ layout: page
 title: A picture is worth 1k words
 description: A text-to-image model for large documents
 img: assets/img/text_mining/thumbnail.png
-importance: 6
+importance: 60
 ---
 
 Project repository: <https://github.com/fjzs/APictureIsWorthSomeWords>

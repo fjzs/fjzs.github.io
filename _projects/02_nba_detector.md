@@ -3,7 +3,7 @@ layout: page
 title: NBA Detector
 description: Players, Ball and Rim Detection from NBA YouTube Highlight Scrapped Videos
 img: assets/img/nba/asd.png
-importance: 5
+importance: 50
 ---
 
 Project repository: <https://github.com/fjzs/NBA-Detector>

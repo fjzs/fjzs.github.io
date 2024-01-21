@@ -3,7 +3,7 @@ layout: page
 title: Freight Network Design
 description: A hub location problem in Turkey
 img: assets/img/network_design/network_front.jpg
-importance: 2
+importance: 20
 ---
 
 This is a personal project inspired by professor and friend Armin Lüer <https://scholar.google.com/citations?user=9F69pKwAAAAJ>.

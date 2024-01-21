@@ -3,7 +3,7 @@ layout: page
 title: Distracted Driver
 description: Detecting distracted drivers from images
 img: assets/img/project1_pic.PNG
-importance: 7
+importance: 70
 category: Personal
 redirect: https://github.com/fjzs/DistractedDriver
 ---
