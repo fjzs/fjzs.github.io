@@ -33,6 +33,12 @@ I am pursuing a Master's in Computer Science to integrate the best software deve
 <br>
 ### **News**
 
+#### April 2024: Informs Analytics in Orlando
+I attended my first Informs Analytics conference, where I had the opportunity to attend the Edelman Gala and see multiple usages of Operations Research on different industries.
+<p align="center">
+<img src="./assets/img/informs.png" alt="Me at Informs" width="500">
+</p>
+
 #### June 2023: CVPR in Vancouver
 I attended my first AI conference, where I had the opportunity to witness firsthand the direction in which the forefront of Computer Vision research is heading.
 <!-- ![CVPR image of me](./assets/img/CVPR.jpeg)-->
