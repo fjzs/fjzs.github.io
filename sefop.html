@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEFOP — Software Engineering Framework for Optimization</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0D0F13;
+    --bg-alt: #14171D;
+    --bg-card: #181C23;
+    --text: #E8ECF1;
+    --text-secondary: #9AA3B2;
+    --text-tertiary: #626B7A;
+    --accent: #3ECF8E;
+    --accent-dim: #2A9D6B;
+    --accent-tint: #16261F;
+    --border: #262B34;
+    --font-display: 'IBM Plex Sans', sans-serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --max-width: 1080px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 32px; }
+
+  /* ---------- NAV ---------- */
+  header.nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(13, 15, 19, 0.9);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .back-link {
+    font-family: var(--font-mono); font-size: 13px; color: var(--text-secondary);
+    display: flex; align-items: center; gap: 8px; transition: color 0.15s ease;
+  }
+  .back-link:hover { color: var(--accent); }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { font-size: 13.5px; color: var(--text-secondary); font-weight: 500; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links .btn-primary { padding: 9px 16px; }
+
+  @media (max-width: 640px) { .nav-links a:not(.btn-primary) { display: none; } }
+
+  /* ---------- HOOK ---------- */
+  .hook { padding: 88px 0 56px; text-align: center; }
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 12.5px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
+    margin-bottom: 20px; display: inline-block;
+  }
+  h1 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: clamp(30px, 4.6vw, 46px); line-height: 1.15;
+    letter-spacing: -0.01em; margin-bottom: 22px;
+  }
+  .hook-sub {
+    font-size: 17px; color: var(--text-secondary); max-width: 58ch;
+    margin: 0 auto 36px;
+  }
+  .hook-sub strong { color: var(--text); font-weight: 600; }
+  .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px;
+    border-radius: 6px; font-size: 14px; font-weight: 600; transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: #06110B; }
+  .btn-primary:hover { background: #55DDA0; transform: translateY(-1px); }
+  .btn-secondary { border-color: var(--border); color: var(--text); }
+  .btn-secondary:hover { border-color: var(--text-secondary); }
+
+  /* ---------- LIVE DEMO CARD ---------- */
+  .demo-card {
+    margin: 56px auto 0; max-width: 760px;
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+    overflow: hidden;
+  }
+  .demo-chrome {
+    display: flex; align-items: center; gap: 8px; padding: 12px 16px;
+    background: var(--bg-alt); border-bottom: 1px solid var(--border);
+  }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--border); }
+  .demo-chrome .url {
+    margin-left: 12px; font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary);
+  }
+  .demo-body { padding: 28px 28px 32px; text-align: left; }
+  .demo-row { display: flex; gap: 16px; margin-bottom: 14px; flex-wrap: wrap; }
+  .demo-field { flex: 1; min-width: 140px; }
+  .demo-field label {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);
+    text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 6px;
+  }
+  .demo-field .val {
+    background: var(--bg-alt); border: 1px solid var(--border); border-radius: 6px;
+    padding: 9px 12px; font-family: var(--font-mono); font-size: 13px; color: var(--text);
+  }
+  .demo-table { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 13px; }
+  .demo-table th {
+    text-align: left; font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);
+    text-transform: uppercase; letter-spacing: 0.05em; padding: 8px 10px; border-bottom: 1px solid var(--border);
+  }
+  .demo-table td { padding: 9px 10px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+  .demo-table tr:last-child td { border-bottom: none; }
+  .demo-solve-btn {
+    margin-top: 18px; width: 100%; padding: 12px; background: var(--accent); color: #06110B;
+    border: none; border-radius: 6px; font-family: var(--font-mono); font-weight: 600; font-size: 13px;
+    cursor: pointer; transition: background 0.15s ease;
+  }
+  .demo-solve-btn:hover { background: #55DDA0; }
+  .demo-result {
+    margin-top: 16px; padding: 14px 16px; background: var(--accent-tint); border: 1px solid var(--accent-dim);
+    border-radius: 8px; font-family: var(--font-mono); font-size: 12.5px; color: #A8F0C6;
+  }
+  .demo-note {
+    margin-top: 18px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-tertiary);
+    text-align: center;
+  }
+
+  /* ---------- DEEP DIVE DIVIDER ---------- */
+  .deep-divide {
+    display: flex; align-items: center; gap: 16px; max-width: 500px; margin: 88px auto 0; padding: 0 32px;
+    font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary); letter-spacing: 0.05em;
+  }
+  .deep-divide::before, .deep-divide::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  /* ---------- SECTION SHARED ---------- */
+  section.deep { padding: 64px 0; }
+  .section-head { margin-bottom: 36px; max-width: 62ch; }
+  .section-head .eyebrow { margin-bottom: 12px; }
+  h2 {
+    font-family: var(--font-display); font-weight: 600; font-size: clamp(22px, 2.8vw, 28px);
+    letter-spacing: -0.01em; margin-bottom: 10px;
+  }
+  .section-head p { color: var(--text-secondary); font-size: 15px; }
+
+  /* ---------- MATH FORMULATION ---------- */
+  .math-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 32px 36px;
+  }
+  .math-card .label {
+    font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);
+    text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 14px;
+  }
+  .math-line {
+    font-family: var(--font-mono); font-size: 14.5px; color: var(--text); margin-bottom: 10px;
+    line-height: 1.9;
+  }
+  .math-line .op { color: var(--accent); }
+  .math-line.indent { padding-left: 24px; color: var(--text-secondary); }
+  .math-block + .math-block { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); }
+
+  .example-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13.5px; }
+  .example-table th {
+    text-align: left; font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);
+    text-transform: uppercase; padding: 8px 12px; border-bottom: 1px solid var(--border);
+  }
+  .example-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+  .example-table tr.highlight td { color: var(--accent); font-weight: 600; }
+
+  /* ---------- ARCHITECTURE ---------- */
+  .arch-diagram {
+    display: flex; flex-direction: column; gap: 0; max-width: 560px; margin: 0 auto;
+  }
+  .arch-ring {
+    padding: 18px 24px; border: 1px solid var(--border); text-align: center;
+    font-family: var(--font-mono); font-size: 13px; position: relative;
+  }
+  .arch-ring .ring-title { font-weight: 600; color: var(--text); font-size: 14px; margin-bottom: 4px; }
+  .arch-ring .ring-sub { color: var(--text-tertiary); font-size: 11.5px; }
+  .arch-ring.entities { background: var(--accent-tint); border-color: var(--accent-dim); border-radius: 10px 10px 0 0; }
+  .arch-ring.entities .ring-title { color: var(--accent); }
+  .arch-ring.usecases { background: var(--bg-card); }
+  .arch-ring.adapters { background: var(--bg-alt); }
+  .arch-ring.frameworks { background: var(--bg-card); border-radius: 0 0 10px 10px; }
+  .arch-arrow {
+    text-align: center; font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary);
+    padding: 4px 0;
+  }
+
+  .solver-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 8px;
+  }
+  .solver-item {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px;
+    font-size: 12.5px;
+  }
+  .solver-item .s-name { font-family: var(--font-mono); font-weight: 600; color: var(--accent); margin-bottom: 6px; font-size: 12.5px; }
+  .solver-item .s-desc { color: var(--text-tertiary); font-size: 12px; line-height: 1.5; }
+
+  @media (max-width: 760px) { .solver-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 460px) { .solver-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- CI/CD ---------- */
+  .cicd-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .cicd-table th {
+    text-align: left; font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);
+    text-transform: uppercase; padding: 10px 14px; border-bottom: 1px solid var(--border);
+  }
+  .cicd-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+  .cicd-table td.wf { font-family: var(--font-mono); color: var(--text); font-size: 12.5px; }
+  .cicd-table tr:last-child td { border-bottom: none; }
+  .badge-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-right: 8px; }
+
+  /* ---------- REPOS ---------- */
+  .repo-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  }
+  .repo-card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 20px;
+    transition: border-color 0.15s ease;
+  }
+  .repo-card:hover { border-color: var(--accent-dim); }
+  .repo-name { font-family: var(--font-mono); font-weight: 600; font-size: 13.5px; color: var(--accent); margin-bottom: 8px; }
+  .repo-desc { font-size: 12.5px; color: var(--text-tertiary); line-height: 1.6; }
+
+  @media (max-width: 760px) { .repo-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .repo-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- CLOSING ---------- */
+  .closing {
+    text-align: center; padding: 72px 0 96px;
+  }
+  .closing h2 { margin-bottom: 14px; }
+  .closing p { color: var(--text-secondary); margin-bottom: 28px; }
+
+  footer {
+    padding: 32px 0; border-top: 1px solid var(--border);
+    font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary);
+    text-align: center;
+  }
+
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="index.html" class="back-link">← Francisco Zenteno Smith</a>
+    <nav class="nav-links">
+      <a href="#formulation">Problem</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#repos">Repos</a>
+      <a href="https://github.com/sefop" class="btn btn-primary" target="_blank" rel="noopener">GitHub →</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hook">
+  <div class="wrap">
+    <span class="eyebrow">Open Source · MIT License</span>
+    <h1>SEFOP</h1>
+    <p class="hook-sub">Software Engineering Framework for Optimization. Most optimization code is a throwaway research script — solved once, never maintained. SEFOP applies <strong>real software-engineering discipline</strong> — Clean Architecture, dependency injection, full test coverage, CI/CD — to optimization systems, so they can be trusted, extended, and shipped like any other production software.</p>
+    <div class="cta-row">
+      <a href="https://sefop-python-advanced.onrender.com" class="btn btn-primary" target="_blank" rel="noopener">Try the live demo →</a>
+      <a href="https://github.com/sefop" class="btn btn-secondary" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+
+    <div class="demo-card reveal">
+      <div class="demo-chrome">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="url">sefop-python-advanced.onrender.com</span>
+      </div>
+      <div class="demo-body">
+        <div class="demo-row">
+          <div class="demo-field"><label>Budget (USD)</label><div class="val">$10.00</div></div>
+          <div class="demo-field"><label>Weight limit (kg)</label><div class="val">2.00</div></div>
+        </div>
+        <table class="demo-table">
+          <tr><th>Product</th><th>Price</th><th>Weight</th><th>Calories</th></tr>
+          <tr><td>Apple</td><td>$1.00</td><td>0.50 kg</td><td>100</td></tr>
+          <tr><td>Chocolate</td><td>$5.00</td><td>1.00 kg</td><td>50</td></tr>
+        </table>
+        <button class="demo-solve-btn">SOLVE</button>
+        <div class="demo-result">✓ Optimal solution — apple × 4 · 400 calories · $4.00 / $10.00 · 2.00 / 2.00 kg</div>
+      </div>
+    </div>
+    <div class="demo-note">Hosted on Render's free tier — first request after inactivity may take up to a minute to wake up.</div>
+  </div>
+</section>
+
+<div class="deep-divide">TECHNICAL DEEP DIVE</div>
+
+<section id="formulation" class="deep reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Problem</span>
+      <h2>An unbounded knapsack problem</h2>
+      <p>Given a budget and a weight limit, pick the combination of products that maximizes total calories.</p>
+    </div>
+    <div class="math-card">
+      <div class="math-block">
+        <div class="label">Mathematical formulation</div>
+        <div class="math-line"><span class="op">Sets</span> — I: candidate products, indexed by i ∈ I</div>
+        <div class="math-line"><span class="op">Parameters</span> — price·i, weight·i, calories·i for each i ∈ I; B (budget); W (weight limit)</div>
+        <div class="math-line"><span class="op">Decision</span> — xᵢ ∈ ℤ≥0 for each i ∈ I (units of product i selected)</div>
+        <div class="math-line"><span class="op">Maximize</span> — Σ calories·i · xᵢ</div>
+        <div class="math-line indent">subject to  Σ price·i · xᵢ ≤ B  (budget)</div>
+        <div class="math-line indent">subject to  Σ weight·i · xᵢ ≤ W  (weight limit)</div>
+        <div class="math-line indent">xᵢ ∈ ℤ≥0 for all i ∈ I  (integrality)</div>
+      </div>
+      <div class="math-block">
+        <div class="label">Example — data/2/data.json</div>
+        <table class="example-table">
+          <tr><th>Product</th><th>Price</th><th>Weight</th><th>Calories</th><th>Units chosen</th></tr>
+          <tr class="highlight"><td>Apple</td><td>$1.00</td><td>0.50 kg</td><td>100</td><td>4</td></tr>
+          <tr><td>Chocolate</td><td>$5.00</td><td>1.00 kg</td><td>50</td><td>0</td></tr>
+        </table>
+        <div class="math-line" style="margin-top:16px; color: var(--text-secondary); font-size: 13px;">Budget $10.00, weight limit 2.00 kg → optimal: 400 calories at $4.00 / 2.00 kg. Chocolate costs 10× more per calorie, so it never appears in the optimal solution.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="architecture" class="deep reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Architecture</span>
+      <h2>Clean Architecture, applied to optimization</h2>
+      <p>Four canonical rings — dependencies only point inward, toward policy, never outward toward detail.</p>
+    </div>
+    <div class="arch-diagram">
+      <div class="arch-ring entities">
+        <div class="ring-title">Entities</div>
+        <div class="ring-sub">domain/ — Product, Request, Recommendation</div>
+      </div>
+      <div class="arch-arrow">↑ depends on</div>
+      <div class="arch-ring usecases">
+        <div class="ring-title">Use Cases</div>
+        <div class="ring-sub">use_cases/ — SolveSingleRequest, SolveMultipleRequests, EvaluateSolutionForRequest</div>
+      </div>
+      <div class="arch-arrow">↑ depends on</div>
+      <div class="arch-ring adapters">
+        <div class="ring-title">Interface Adapters</div>
+        <div class="ring-sub">adapters/ — JsonDataLoader, CsvResultWriter, adapters/web/</div>
+      </div>
+      <div class="arch-arrow">↑ depends on</div>
+      <div class="arch-ring frameworks">
+        <div class="ring-title">Frameworks &amp; Drivers</div>
+        <div class="ring-sub">cli.py · FastAPI + static frontend</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px;">
+      <div class="section-head" style="margin-bottom: 20px;">
+        <span class="eyebrow">Solving pipeline</span>
+        <h2 style="font-size: 19px;">Four pluggable solver strategies</h2>
+      </div>
+      <div class="solver-grid">
+        <div class="solver-item"><div class="s-name">Enumeration</div><div class="s-desc">Brute force — exhaustive search for small problems</div></div>
+        <div class="solver-item"><div class="s-name">MIP (HiGHS)</div><div class="s-desc">Exact optimal solution via open-source solver</div></div>
+        <div class="solver-item"><div class="s-name">MIP (SCIP)</div><div class="s-desc">Exact optimal via Google MathOpt backend</div></div>
+        <div class="solver-item"><div class="s-name">Heuristic</div><div class="s-desc">Fast, approximate — for large-scale problems</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cicd" class="deep reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">CI / CD</span>
+      <h2>Shipped like production software</h2>
+      <p>Four workflows run in parallel on every push and PR, plus a scheduled security scan. On a clean main-branch build, the app auto-deploys.</p>
+    </div>
+    <table class="cicd-table">
+      <tr><th>Workflow</th><th>Purpose</th></tr>
+      <tr><td class="wf"><span class="badge-dot"></span>ci-code-style.yml</td><td>Formatting (black) and static types (mypy)</td></tr>
+      <tr><td class="wf"><span class="badge-dot"></span>ci-unit-tests.yml</td><td>Fast unit tests</td></tr>
+      <tr><td class="wf"><span class="badge-dot"></span>ci-integration-tests.yml</td><td>End-to-end tests against pre-built scenarios</td></tr>
+      <tr><td class="wf"><span class="badge-dot"></span>ci-docker-build.yml</td><td>Builds the image, smoke-tests GET /health</td></tr>
+      <tr><td class="wf"><span class="badge-dot"></span>CodeQL</td><td>Static security analysis, weekly + on push</td></tr>
+      <tr><td class="wf"><span class="badge-dot"></span>cd-deploy.yml</td><td>On green main: builds &amp; deploys to Render</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="repos" class="deep reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Repositories</span>
+      <h2>Explore the code</h2>
+    </div>
+    <div class="repo-grid">
+      <a class="repo-card" href="https://github.com/sefop/sefop-python-starter" target="_blank" rel="noopener">
+        <div class="repo-name">sefop-python-starter</div>
+        <div class="repo-desc">The reference implementation — start here. CLI, layered architecture, full test suite.</div>
+      </a>
+      <a class="repo-card" href="https://github.com/sefop/sefop-python-advanced" target="_blank" rel="noopener">
+        <div class="repo-name">sefop-python-advanced</div>
+        <div class="repo-desc">Same problem as a deployed web app — FastAPI backend, Docker, live CI/CD.</div>
+      </a>
+      <a class="repo-card" href="https://github.com/sefop/sefop-java" target="_blank" rel="noopener">
+        <div class="repo-name">sefop-java</div>
+        <div class="repo-desc">Reference implementation of SEFOP for Java.</div>
+      </a>
+      <a class="repo-card" href="https://github.com/sefop/sefop-python" target="_blank" rel="noopener">
+        <div class="repo-name">sefop-python</div>
+        <div class="repo-desc">Python package template for building on SEFOP's conventions.</div>
+      </a>
+      <a class="repo-card" href="https://github.com/sefop/sefop-training-hub" target="_blank" rel="noopener">
+        <div class="repo-name">sefop-training-hub</div>
+        <div class="repo-desc">Learn the software-engineering fundamentals SEFOP is built on.</div>
+      </a>
+      <a class="repo-card" href="https://github.com/sefop" target="_blank" rel="noopener">
+        <div class="repo-name">sefop / .github</div>
+        <div class="repo-desc">Org profile — what SEFOP is, core concepts, roadmap, contributing.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="closing reveal">
+  <div class="wrap">
+    <h2>Want to use it, or contribute?</h2>
+    <p>SEFOP is MIT-licensed and open to contributions.</p>
+    <div class="cta-row">
+      <a href="https://github.com/sefop" class="btn btn-primary" target="_blank" rel="noopener">github.com/sefop →</a>
+      <a href="index.html" class="btn btn-secondary">← Back to Francisco's site</a>
+    </div>
+  </div>
+</section>
+
+<footer>Built with SEFOP's own principle: engineering discipline, applied to optimization.</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => io.observe(el));
+
+  document.querySelector('.demo-solve-btn').addEventListener('click', () => {
+    document.querySelector('.demo-result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+</script>
+
+</body>
+</html>
