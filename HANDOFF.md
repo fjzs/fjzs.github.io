@@ -25,7 +25,7 @@ Both files are self-contained (HTML/CSS/JS in one file each, Google Fonts CDN fo
 - **Homepage section order:** hero (bridge thesis) → proof bar → about (with headshot) → SEFOP teaser → experience → skills (two-column OR|SWE split) → awards/education → contact.
 - **Tech stack:** Astro (static output, no client-side app framework needed).
 - **Hosting/domain:** GitHub Pages, custom domain `fjzs.com` (**availability unconfirmed — see Open Items**).
-- **Contact:** LinkedIn as primary CTA; lightweight backup form (needs a real Formspree — or equivalent — endpoint; current form in `index.html` is UI-only, `onsubmit="return false"`).
+- **Contact:** LinkedIn only — no backup email form. `index.html`'s contact section links out to LinkedIn exclusively (the earlier mini email-form prototype was removed per Francisco's explicit choice).
 - **No dedicated résumé/CV feature** (no PDF download, no "Quick View" toggle) — the homepage sections are considered sufficient.
 - **Photo:** headshot placeholder in the About section only (not hero). Real photo not yet supplied — placeholder div in `index.html`.
 - **SEFOP page depth:** two-tier — plain-language hook + live demo link up top for all visitors, full technical substance (math formulation, architecture, CI/CD) below for engineers who scroll.
@@ -41,9 +41,8 @@ Both files are self-contained (HTML/CSS/JS in one file each, Google Fonts CDN fo
 2. **Role between education (UCSD/PUC Chile) and American Airlines** — unconfirmed, possibly a gap or an unlisted prior role. Marked inline in `index.html` timeline.
 3. **`fjzs.com` availability** — not verified through a registrar (direct fetch was blocked by robots.txt, which is inconclusive). Check on Namecheap/name.com/GoDaddy before purchasing or wiring DNS.
 4. **Real SEFOP icon/brand assets** — Francisco has a chosen icon concept (from an earlier session, 20 SVG concepts generated) but the actual file/hex values haven't been shared in this conversation. `sefop.html`'s dark/green palette is a placeholder pending this.
-5. **Headshot photo** — not yet supplied. Placeholder box in `index.html` About section.
-6. **Formspree (or equivalent) account** — needs to be created and wired into the contact form's `action`/endpoint before launch.
-7. **Live demo card in `sefop.html` is a styled mockup**, not an actual embed of `sefop-python-advanced.onrender.com` (artifacts can't reliably iframe external Render apps). The "Try the live demo" button does link out correctly. Decide in the Astro build whether to attempt a real embed or keep the mockup + link pattern.
+5. **Headshot photo** — resolved. Real photo added to the About section (`assets/img/headshot.jpg`).
+6. **Live demo card in `sefop.html` is a styled mockup**, not an actual embed of `sefop-python-advanced.onrender.com` (artifacts can't reliably iframe external Render apps). The "Try the live demo" button does link out correctly. Decide in the Astro build whether to attempt a real embed or keep the mockup + link pattern.
 
 ## 6. Next steps, in order
 
@@ -54,7 +53,6 @@ Both files are self-contained (HTML/CSS/JS in one file each, Google Fonts CDN fo
    - Scaffold an Astro project.
    - Port `index.html` → homepage route/layout, `sefop.html` → `/sefop` route, preserving the CSS custom properties as shared/page-scoped design tokens.
    - Extract shared nav/footer into Astro components (both prototypes currently duplicate this markup).
-   - Wire the real Formspree endpoint.
    - Set up GitHub Pages deployment + custom domain `CNAME`.
 5. Deploy, then update `fjzs.github.io` and LinkedIn to point at the new domain (or decide whether `fjzs.github.io` redirects or retires).
 

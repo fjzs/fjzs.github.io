@@ -453,56 +453,8 @@
   .contact h2 { margin-bottom: 12px; }
   .contact p { color: var(--text-secondary); margin-bottom: 32px; font-size: 15.5px; }
   .contact .cta-row { justify-content: center; }
-  .contact-divider {
-    margin: 36px auto 0;
-    max-width: 320px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--text-tertiary);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .contact-divider::before, .contact-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-  .mini-form {
-    margin-top: 28px;
-    display: flex;
-    gap: 10px;
-    max-width: 420px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .mini-form input {
-    flex: 1;
-    padding: 11px 14px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    font-family: var(--font-body);
-    font-size: 14px;
-    background: var(--bg);
-  }
-  .mini-form input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
-  .mini-form button {
-    padding: 11px 18px;
-    background: var(--text);
-    color: var(--bg);
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s ease;
-  }
-  .mini-form button:hover { background: var(--accent); }
-
   @media (max-width: 700px) {
     .contact { padding: 40px 24px; }
-    .mini-form { flex-direction: column; }
   }
 
   /* ---------- FOOTER ---------- */
@@ -729,11 +681,6 @@ Total weight   : 2.00 kg</span>
       <div class="cta-row">
         <a href="https://www.linkedin.com/in/francisco-zenteno-smith/" class="btn btn-primary" target="_blank" rel="noopener">Connect on LinkedIn →</a>
       </div>
-      <div class="contact-divider">or send a message directly</div>
-      <form class="mini-form" onsubmit="return false;">
-        <input type="email" placeholder="you@company.com" required>
-        <button type="submit">Send</button>
-      </form>
     </div>
   </div>
 </section>
