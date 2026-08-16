@@ -182,6 +182,22 @@
       margin-bottom: 24px;
     }
 
+    .hero-photo {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .hero-sub {
       font-size: 17px;
       color: var(--text-secondary);
@@ -249,6 +265,7 @@
       height: auto;
       max-width: 380px;
       justify-self: center;
+      margin-top: 32px;
     }
 
     .converge-node {
@@ -428,10 +445,7 @@
     }
 
     .sefop-inner {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
-      align-items: center;
+      max-width: 60ch;
     }
 
     .sefop .eyebrow {
@@ -454,37 +468,10 @@
       background: var(--accent);
     }
 
-    .sefop-code {
-      background: #0D0F13;
-      border-radius: 10px;
-      padding: 22px 24px;
-      font-family: var(--font-mono);
-      font-size: 13px;
-      line-height: 1.8;
-      color: #C9D6EA;
-      overflow-x: auto;
-    }
-
-    .sefop-code .c-prompt {
-      color: #6B93E8;
-    }
-
-    .sefop-code .c-comment {
-      color: #6E7480;
-    }
-
-    .sefop-code .c-result {
-      color: #8FE3A6;
-    }
-
     @media (max-width: 860px) {
       .sefop {
         padding: 36px 24px;
         border-radius: 12px;
-      }
-
-      .sefop-inner {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -537,133 +524,18 @@
       margin-bottom: 12px;
     }
 
-    .tl-list {
-      list-style: none;
-    }
-
-    .tl-list li {
+    .tl-highlight {
       font-size: 14.5px;
       color: var(--text-secondary);
       padding-left: 18px;
       position: relative;
-      margin-bottom: 6px;
     }
 
-    .tl-list li::before {
+    .tl-highlight::before {
       content: '—';
       position: absolute;
       left: 0;
       color: var(--text-tertiary);
-    }
-
-    .tl-note {
-      font-family: var(--font-mono);
-      font-size: 12.5px;
-      color: var(--text-tertiary);
-      font-style: italic;
-      margin-top: 4px;
-    }
-
-    /* ---------- SKILLS ---------- */
-    .skills-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .skills-col {
-      padding: 36px 40px;
-    }
-
-    .skills-col:first-child {
-      border-right: 1px solid var(--border);
-      background: var(--bg-alt);
-    }
-
-    .skills-col .eyebrow {
-      font-size: 11px;
-      margin-bottom: 18px;
-    }
-
-    .skills-col ul {
-      list-style: none;
-    }
-
-    .skills-col li {
-      font-size: 14.5px;
-      padding: 7px 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--text-secondary);
-    }
-
-    .skills-col li:last-child {
-      border-bottom: none;
-    }
-
-    .skills-col li strong {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    @media (max-width: 700px) {
-      .skills-split {
-        grid-template-columns: 1fr;
-      }
-
-      .skills-col:first-child {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-      }
-    }
-
-    /* ---------- AWARDS / EDUCATION ---------- */
-    .ae-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-    }
-
-    .ae-block h3 {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 20px;
-    }
-
-    .ae-list {
-      list-style: none;
-    }
-
-    .ae-list li {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .ae-list li:first-child {
-      padding-top: 0;
-    }
-
-    .ae-item-title {
-      font-weight: 600;
-      font-size: 15px;
-      margin-bottom: 2px;
-    }
-
-    .ae-item-sub {
-      font-size: 13.5px;
-      color: var(--text-tertiary);
-    }
-
-    @media (max-width: 700px) {
-      .ae-grid {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
     }
 
     /* ---------- CONTACT ---------- */
@@ -752,6 +624,7 @@
   <section class="hero">
     <div class="wrap">
       <div>
+        <div class="hero-photo"><img src="assets/img/headshot.jpg" alt="Francisco Zenteno Smith" width="84" height="84"></div>
         <span class="eyebrow">Senior Operations Research Consultant — American Airlines</span>
         <h1>Optimization, engineered like production software.</h1>
         <p class="hero-sub">I'm Francisco Zenteno Smith. I <strong>transform legacy systems into production-grade
@@ -807,9 +680,10 @@
         <div class="headshot"><img src="assets/img/headshot.jpg" alt="Francisco Zenteno Smith" width="200" height="200">
         </div>
         <div class="about-body">
-          <p>With a decade of experience applying operations research across retail, manufacturing, healthcare, and
-            aviation, I bridge two disciplines that are too often kept separate: <strong>mathematical optimization and
-              software engineering</strong>.</p>
+          <p>With a decade of experience applying operations research across airlines, retail, mining, cargo, and
+            healthcare, I bridge two disciplines that are too often kept separate: <strong>mathematical optimization
+              and software engineering</strong>. I'm equally effective as the deepest individual contributor on a hard
+            problem or directing a team of engineers to deliver an end-to-end system.</p>
           <p>At American Airlines, I build large-scale optimization systems that power flight operations — designed and
             shipped with the same engineering rigor as any production software, not treated as one-off research code.
           </p>
@@ -834,25 +708,13 @@
     <div class="wrap">
       <div class="sefop">
         <div class="sefop-inner">
-          <div>
-            <span class="eyebrow">Open Source</span>
-            <h2>SEFOP — Software Engineering Framework for Optimization</h2>
-            <p>A framework for building optimization systems the way you'd build any production software: Clean
-              Architecture, dependency injection, full test coverage, and CI/CD — not throwaway research scripts.
-              Includes reference implementations across languages and a live, deployed demo.</p>
-            <a href="https://github.com/sefop" class="btn btn-primary" target="_blank" rel="noopener">See the full
-              breakdown →</a>
-          </div>
-          <div class="sefop-code">
-            <span class="c-prompt">$</span> python -m cli solve 1
-            <span class="c-comment"># budget $10.00 · weight limit 2.00kg</span>
-
-            <span class="c-result">Products selected:
-              apple x4
-              Total calories : 400
-              Total cost : $4.00
-              Total weight : 2.00 kg</span>
-          </div>
+          <span class="eyebrow">Open Source</span>
+          <h2>SEFOP — Software Engineering Framework for Optimization</h2>
+          <p>A framework for building optimization systems the way you'd build any production software: Clean
+            Architecture, dependency injection, full test coverage, and CI/CD — not throwaway research scripts.
+            Includes reference implementations across languages and a live, deployed demo.</p>
+          <a href="https://github.com/sefop" class="btn btn-primary" target="_blank" rel="noopener">See the full
+            breakdown →</a>
         </div>
       </div>
     </div>
@@ -866,95 +728,25 @@
       </div>
       <div class="timeline">
         <div class="tl-item">
-          <div class="tl-date">2023 — Present <span style="opacity:0.6">[confirm start date]</span></div>
-          <div class="tl-role">Senior Operations Research Consultant</div>
+          <div class="tl-date">2024 — Present</div>
+          <div class="tl-role">Senior Operations Research Scientist</div>
           <div class="tl-org">American Airlines</div>
-          <ul class="tl-list">
-            <li>Build large-scale optimization systems that power flight operations</li>
-            <li>Reduced technical debt by 67%, measured via static code analysis tools</li>
-            <li>Recognized with the Silva Award (Q1 2026)</li>
-            <li>Speaker, Agentic Quality Summit — Atlanta (May 2026)</li>
-          </ul>
+          <p class="tl-highlight">Led the year-long refactor of a legacy decision-support system, cutting technical
+            debt 67% by teaching the team software-engineering principles.</p>
         </div>
         <div class="tl-item">
-          <div class="tl-date">— <span style="opacity:0.6">[role between education and American Airlines TBD]</span>
-          </div>
-          <div class="tl-role" style="color: var(--text-tertiary)">Prior experience</div>
-          <div class="tl-note">Let me know what belongs here and I'll fill it in.</div>
+          <div class="tl-date">2017 — 2020</div>
+          <div class="tl-role">Senior Data Scientist</div>
+          <div class="tl-org">SMU</div>
+          <p class="tl-highlight">Built a simulated-annealing metaheuristic that shipped a monthly
+            cashier-scheduling system to production for 350 stores — without commercial optimization software.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="reveal">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Skills</span>
-        <h2>Two disciplines, one practice</h2>
-      </div>
-      <div class="skills-split">
-        <div class="skills-col">
-          <span class="eyebrow">Operations Research</span>
-          <ul>
-            <li><strong>Optimization</strong> — linear & mixed-integer programming, metaheuristics</li>
-            <li><strong>Discrete-event simulation</strong></li>
-            <li><strong>Solvers</strong> — CPLEX, Gurobi, HiGHS, AMPL</li>
-            <li><strong>Applied ML</strong> — regression & classification</li>
-          </ul>
-        </div>
-        <div class="skills-col">
-          <span class="eyebrow">Software Engineering</span>
-          <ul>
-            <li><strong>Languages</strong> — Python, Java, C#, SQL</li>
-            <li><strong>Architecture</strong> — Clean Architecture, dependency injection</li>
-            <li><strong>Delivery</strong> — CI/CD, Docker, FastAPI, Git</li>
-            <li><strong>Practice</strong> — testing discipline, static analysis</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="awards" class="reveal">
-    <div class="wrap">
-      <div class="ae-grid">
-        <div class="ae-block">
-          <h3>Awards</h3>
-          <ul class="ae-list">
-            <li>
-              <div class="ae-item-title">Silva Award (2026)</div>
-              <div class="ae-item-sub">American Airlines</div>
-            </li>
-            <li>
-              <div class="ae-item-title">Full Scholarship (2022)</div>
-              <div class="ae-item-sub">Government of Chile — UCSD Master's program</div>
-            </li>
-            <li>
-              <div class="ae-item-title">Top 4%, Kaggle 'Santa Stolen Sleigh' (2016)</div>
-              <div class="ae-item-sub">Simulated-annealing metaheuristic for a capacitated VRP</div>
-            </li>
-            <li>
-              <div class="ae-item-title">Operations Research Cup — 3rd place (2016, 2014)</div>
-              <div class="ae-item-sub">Complex Engineering Systems Institute, Chile</div>
-            </li>
-            <li>
-              <div class="ae-item-title">Best Teaching Assistant (2013)</div>
-              <div class="ae-item-sub">Pontificia Universidad Católica de Chile</div>
-            </li>
-          </ul>
-        </div>
-        <div class="ae-block">
-          <h3>Education</h3>
-          <ul class="ae-list">
-            <li>
-              <div class="ae-item-title">M.S. Computer Science</div>
-              <div class="ae-item-sub">UC San Diego</div>
-            </li>
-            <li>
-              <div class="ae-item-title">M.S. Industrial Engineering</div>
-              <div class="ae-item-sub">Pontificia Universidad Católica de Chile</div>
-            </li>
-          </ul>
+        <div class="tl-item">
+          <div class="tl-date">2013 — 2016</div>
+          <div class="tl-role">Data Scientist</div>
+          <div class="tl-org">Shift Workforce Management</div>
+          <p class="tl-highlight">Designed a multi-objective staff-planning model reused across 20+ consultancies
+            for enterprise clients.</p>
         </div>
       </div>
     </div>
