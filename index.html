@@ -95,7 +95,7 @@
     .nav-mark {
       font-family: var(--font-mono);
       font-weight: 600;
-      font-size: 15px;
+      font-size: 19px;
       letter-spacing: 0.02em;
     }
 
@@ -150,7 +150,7 @@
 
     /* ---------- HERO ---------- */
     .hero {
-      padding: 96px 0 72px;
+      padding: 48px 0 72px;
       position: relative;
       overflow: hidden;
     }
@@ -182,32 +182,41 @@
       margin-bottom: 24px;
     }
 
-    .hero-photo {
-      width: 84px;
-      height: 84px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      margin-bottom: 24px;
-    }
-
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
     .hero-sub {
       font-size: 17px;
       color: var(--text-secondary);
-      max-width: 46ch;
-      margin-bottom: 36px;
+      max-width: 50ch;
+      margin-bottom: 14px;
     }
 
     .hero-sub strong {
       color: var(--text);
       font-weight: 600;
+    }
+
+    .hero-caps {
+      list-style: none;
+      max-width: 50ch;
+      margin-bottom: 36px;
+    }
+
+    .hero-caps li {
+      font-size: 16px;
+      color: var(--text-secondary);
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    .hero-caps li:last-child {
+      margin-bottom: 0;
+    }
+
+    .hero-caps li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
     }
 
     .cta-row {
@@ -259,32 +268,21 @@
       color: var(--accent);
     }
 
-    /* signature: converging lines */
-    .converge {
+    .hero-photo {
       width: 100%;
-      height: auto;
-      max-width: 380px;
+      max-width: 340px;
+      aspect-ratio: 4 / 5;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
       justify-self: center;
-      margin-top: 32px;
     }
 
-    .converge-node {
-      animation: pulse 2.6s ease-in-out infinite;
-      transform-origin: center;
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        r: 4;
-        opacity: 1;
-      }
-
-      50% {
-        r: 6;
-        opacity: 0.75;
-      }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     @media (max-width: 860px) {
@@ -292,8 +290,8 @@
         grid-template-columns: 1fr;
       }
 
-      .converge {
-        max-width: 260px;
+      .hero-photo {
+        max-width: 240px;
         order: -1;
         margin: 0 auto 8px;
       }
@@ -373,29 +371,6 @@
     }
 
     /* ---------- ABOUT ---------- */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .headshot {
-      width: 200px;
-      height: 200px;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      flex-shrink: 0;
-    }
-
-    .headshot img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
     .about-body p {
       font-size: 16px;
       color: var(--text-secondary);
@@ -423,17 +398,6 @@
       border: 1px solid var(--border);
       border-radius: 20px;
       color: var(--text-secondary);
-    }
-
-    @media (max-width: 700px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .headshot {
-        width: 140px;
-        height: 140px;
-      }
     }
 
     /* ---------- SEFOP TEASER ---------- */
@@ -611,7 +575,7 @@
 
   <header class="nav">
     <div class="wrap">
-      <div class="nav-mark">Francisco Zenteno Smith<span>.</span></div>
+      <div class="nav-mark">Francisco Zenteno Smith</div>
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#sefop">SEFOP</a>
@@ -624,12 +588,14 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <div class="hero-photo"><img src="assets/img/headshot.jpg" alt="Francisco Zenteno Smith" width="84" height="84"></div>
-        <span class="eyebrow">Senior Operations Research Consultant — American Airlines</span>
+        <span class="eyebrow">Applied Operations Research & Software Engineering</span>
         <h1>Optimization, engineered like production software.</h1>
-        <p class="hero-sub">I'm Francisco Zenteno Smith. I <strong>transform legacy systems into production-grade
-            decision-support software</strong> — bridging operations research rigor with software engineering
-          discipline.</p>
+        <p class="hero-sub">I'm Francisco Zenteno Smith, an operations research leader who:</p>
+        <ul class="hero-caps">
+          <li>Delivers end-to-end decision-support software</li>
+          <li>Modernizes legacy systems into production-grade platforms</li>
+          <li>Leads and trains scientists to build to professional engineering standards</li>
+        </ul>
         <div class="cta-row">
           <a href="#sefop" class="btn btn-primary">Explore SEFOP →</a>
           <a href="https://www.linkedin.com/in/francisco-zenteno-smith/" class="btn btn-secondary" target="_blank"
@@ -637,18 +603,7 @@
           <a href="#contact" class="btn btn-text">Get in touch</a>
         </div>
       </div>
-      <svg class="converge" viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M20 40 Q 120 60 150 130" stroke="#1F4FD1" stroke-width="2" stroke-linecap="round" opacity="0.55" />
-        <path d="M20 220 Q 120 200 150 130" stroke="#1F4FD1" stroke-width="2" stroke-linecap="round" opacity="0.55" />
-        <path d="M150 130 Q 210 130 280 130" stroke="#1F4FD1" stroke-width="2" stroke-linecap="round" opacity="0.85" />
-        <circle cx="20" cy="40" r="4" fill="#1F4FD1" opacity="0.5" />
-        <circle cx="20" cy="220" r="4" fill="#1F4FD1" opacity="0.5" />
-        <circle class="converge-node" cx="150" cy="130" r="5" fill="#1F4FD1" />
-        <circle cx="280" cy="130" r="4" fill="#1F4FD1" opacity="0.85" />
-        <text x="8" y="28" font-family="IBM Plex Mono" font-size="11" fill="#8891A0">OR</text>
-        <text x="8" y="238" font-family="IBM Plex Mono" font-size="11" fill="#8891A0">SWE</text>
-        <text x="255" y="118" font-family="IBM Plex Mono" font-size="11" fill="#8891A0">optimal</text>
-      </svg>
+      <div class="hero-photo"><img src="assets/img/headshot.jpg" alt="Francisco Zenteno Smith"></div>
     </div>
   </section>
 
@@ -676,29 +631,25 @@
         <span class="eyebrow">About</span>
         <h2>A decade bridging operations research and software engineering</h2>
       </div>
-      <div class="about-grid">
-        <div class="headshot"><img src="assets/img/headshot.jpg" alt="Francisco Zenteno Smith" width="200" height="200">
-        </div>
-        <div class="about-body">
-          <p>With a decade of experience applying operations research across airlines, retail, mining, cargo, and
-            healthcare, I bridge two disciplines that are too often kept separate: <strong>mathematical optimization
-              and software engineering</strong>. I'm equally effective as the deepest individual contributor on a hard
-            problem or directing a team of engineers to deliver an end-to-end system.</p>
-          <p>At American Airlines, I build large-scale optimization systems that power flight operations — designed and
-            shipped with the same engineering rigor as any production software, not treated as one-off research code.
-          </p>
-          <p>I hold dual master's degrees in <strong>Computer Science</strong> (UC San Diego) and <strong>Industrial
-              Engineering</strong> (Pontificia Universidad Católica de Chile), and created <strong>SEFOP</strong>, an
-            open-source framework for bringing software-engineering discipline to optimization programs. In 2026, I
-            spoke at the Agentic Quality Summit in Atlanta on bridging operations research and production-grade
-            engineering.</p>
-          <div class="about-tags">
-            <span class="tag">Operations Research</span>
-            <span class="tag">Clean Architecture</span>
-            <span class="tag">Optimization</span>
-            <span class="tag">MIP / Metaheuristics</span>
-            <span class="tag">Python · Java · C#</span>
-          </div>
+      <div class="about-body">
+        <p>With a decade of experience applying operations research across airlines, retail, mining, cargo, and
+          healthcare, I bridge two disciplines that are too often kept separate: <strong>mathematical optimization
+            and software engineering</strong>. I'm equally effective as the deepest individual contributor on a hard
+          problem or directing a team of engineers to deliver an end-to-end system.</p>
+        <p>At American Airlines, I build large-scale optimization systems that power flight operations — designed and
+          shipped with the same engineering rigor as any production software, not treated as one-off research code.
+        </p>
+        <p>I hold dual master's degrees in <strong>Computer Science</strong> (UC San Diego) and <strong>Industrial
+            Engineering</strong> (Pontificia Universidad Católica de Chile), and created <strong>SEFOP</strong>, an
+          open-source framework for bringing software-engineering discipline to optimization programs. In 2026, I
+          spoke at the Agentic Quality Summit in Atlanta on bridging operations research and production-grade
+          engineering.</p>
+        <div class="about-tags">
+          <span class="tag">Operations Research</span>
+          <span class="tag">Clean Architecture</span>
+          <span class="tag">Optimization</span>
+          <span class="tag">MIP / Metaheuristics</span>
+          <span class="tag">Python · Java · C#</span>
         </div>
       </div>
     </div>
