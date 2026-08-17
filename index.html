@@ -150,7 +150,7 @@
 
     /* ---------- HERO ---------- */
     .hero {
-      padding: 48px 0 72px;
+      padding: 48px 0 8px;
       position: relative;
       overflow: hidden;
     }
@@ -164,13 +164,17 @@
 
     .eyebrow {
       font-family: var(--font-mono);
-      font-size: 13px;
+      font-size: 45px;
       font-weight: 500;
       letter-spacing: 0.06em;
-      text-transform: uppercase;
+      text-transform: none;
       color: var(--accent);
       margin-bottom: 20px;
       display: inline-block;
+    }
+
+    .hero .eyebrow {
+      font-size: 16px;
     }
 
     h1 {
@@ -197,7 +201,19 @@
     .hero-caps {
       list-style: none;
       max-width: 50ch;
-      margin-bottom: 36px;
+      margin-bottom: 16px;
+    }
+
+    .hero-sefop-note {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 50ch;
+      margin-bottom: 28px;
+    }
+
+    .hero-sefop-note strong {
+      color: var(--text);
+      font-weight: 600;
     }
 
     .hero-caps li {
@@ -206,6 +222,11 @@
       padding-left: 20px;
       position: relative;
       margin-bottom: 8px;
+    }
+
+    .hero-caps li strong {
+      color: var(--text);
+      font-weight: 600;
     }
 
     .hero-caps li:last-child {
@@ -258,16 +279,6 @@
       border-color: var(--text);
     }
 
-    .btn-text {
-      color: var(--text-secondary);
-      font-weight: 500;
-      padding: 13px 4px;
-    }
-
-    .btn-text:hover {
-      color: var(--accent);
-    }
-
     .hero-photo {
       width: 100%;
       max-width: 340px;
@@ -298,54 +309,6 @@
 
       .hero {
         padding: 56px 0 48px;
-      }
-    }
-
-    /* ---------- PROOF BAR ---------- */
-    .proof {
-      background: var(--bg-alt);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 40px 0;
-    }
-
-    .proof .wrap {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-
-    .proof-item {
-      padding-left: 20px;
-      border-left: 2px solid var(--accent);
-    }
-
-    .proof-item .eyebrow {
-      margin-bottom: 8px;
-      font-size: 11px;
-    }
-
-    .proof-item h3 {
-      font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1.35;
-      margin-bottom: 4px;
-    }
-
-    .proof-item a.proof-link {
-      font-size: 13px;
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    .proof-item a.proof-link:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 760px) {
-      .proof .wrap {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -589,61 +552,44 @@
     <div class="wrap">
       <div>
         <span class="eyebrow">Applied Operations Research & Software Engineering</span>
-        <h1>Optimization, engineered like production software.</h1>
-        <p class="hero-sub">I'm Francisco Zenteno Smith, an operations research leader who:</p>
+        <h1>Decision-support systems with professional engineering standards</h1>
+        <p class="hero-sub">I'm Francisco Zenteno Smith, an operations research scientist with a decade of experience. I
+          can:</p>
         <ul class="hero-caps">
-          <li>Delivers end-to-end decision-support software</li>
-          <li>Modernizes legacy systems into production-grade platforms</li>
-          <li>Leads and trains scientists to build to professional engineering standards</li>
+          <li><strong>Deliver</strong> end-to-end decision-support software.</li>
+          <li><strong>Modernize</strong> legacy systems into production-grade platforms.</li>
+          <li><strong>Lead</strong> and train data scientists to build systems with professional engineering
+            standards.</li>
         </ul>
+        <p class="hero-sefop-note">To deliver on all three, I created <strong>SEFOP</strong>, the Software Engineering
+          Framework for Optimization Programs.</p>
         <div class="cta-row">
           <a href="#sefop" class="btn btn-primary">Explore SEFOP →</a>
           <a href="https://www.linkedin.com/in/francisco-zenteno-smith/" class="btn btn-secondary" target="_blank"
             rel="noopener">Connect on LinkedIn</a>
-          <a href="#contact" class="btn btn-text">Get in touch</a>
         </div>
       </div>
       <div class="hero-photo"><img src="assets/img/headshot.jpg" alt="Francisco Zenteno Smith"></div>
     </div>
   </section>
 
-  <div class="proof">
-    <div class="wrap">
-      <div class="proof-item">
-        <span class="eyebrow">Capability</span>
-        <h3>Legacy systems → production-grade software</h3>
-      </div>
-      <div class="proof-item">
-        <span class="eyebrow">Recognition</span>
-        <h3>Silva Award — American Airlines, 2026</h3>
-      </div>
-      <div class="proof-item">
-        <span class="eyebrow">Artifact</span>
-        <h3>SEFOP — open-source framework</h3>
-        <a href="https://github.com/sefop" class="proof-link" target="_blank" rel="noopener">github.com/sefop →</a>
-      </div>
-    </div>
-  </div>
-
   <section id="about" class="reveal">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">About</span>
-        <h2>A decade bridging operations research and software engineering</h2>
+        <span class="eyebrow">About me</span>
       </div>
       <div class="about-body">
         <p>With a decade of experience applying operations research across airlines, retail, mining, cargo, and
           healthcare, I bridge two disciplines that are too often kept separate: <strong>mathematical optimization
-            and software engineering</strong>. I'm equally effective as the deepest individual contributor on a hard
-          problem or directing a team of engineers to deliver an end-to-end system.</p>
-        <p>At American Airlines, I build large-scale optimization systems that power flight operations — designed and
-          shipped with the same engineering rigor as any production software, not treated as one-off research code.
-        </p>
+            and software engineering</strong>. My focus isn't proving a model works once — it's building it to run in
+          production, day after day, the way any serious piece of software should.</p>
+        <p>At American Airlines, I build large-scale optimization systems that power flight operations, held to the
+          same engineering standards as any other production software.</p>
         <p>I hold dual master's degrees in <strong>Computer Science</strong> (UC San Diego) and <strong>Industrial
-            Engineering</strong> (Pontificia Universidad Católica de Chile), and created <strong>SEFOP</strong>, an
-          open-source framework for bringing software-engineering discipline to optimization programs. In 2026, I
-          spoke at the Agentic Quality Summit in Atlanta on bridging operations research and production-grade
-          engineering.</p>
+            Engineering</strong> (Pontificia Universidad Católica de Chile). I also created <strong>SEFOP</strong>, an
+          open-source framework for bringing software-engineering discipline to optimization programs, and in 2026
+          spoke at the Agentic Quality Summit in Atlanta on how agentic development is reshaping how decision-support
+          software gets built.</p>
         <div class="about-tags">
           <span class="tag">Operations Research</span>
           <span class="tag">Clean Architecture</span>
