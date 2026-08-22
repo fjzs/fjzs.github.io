@@ -334,7 +334,8 @@
       letter-spacing: -0.01em;
     }
 
-    /* ---------- ABOUT ---------- */
+    /* ---------- SHARED SECTION BODY ---------- */
+    .section-body p,
     .about-body p {
       font-size: 16px;
       color: var(--text-secondary);
@@ -342,6 +343,7 @@
       max-width: 64ch;
     }
 
+    .section-body strong,
     .about-body strong {
       color: var(--text);
       font-weight: 600;
@@ -380,16 +382,16 @@
       color: #8FB0FF;
     }
 
-    .sefop h2 {
-      color: #fff;
-      margin-bottom: 16px;
-    }
-
     .sefop p {
       color: #B7BCC6;
       font-size: 15.5px;
       margin-bottom: 24px;
       max-width: 52ch;
+    }
+
+    .sefop p strong {
+      color: #fff;
+      font-weight: 600;
     }
 
     .sefop .btn-primary {
@@ -474,10 +476,6 @@
       text-align: center;
     }
 
-    .contact h2 {
-      margin-bottom: 12px;
-    }
-
     .contact p {
       color: var(--text-secondary);
       margin-bottom: 32px;
@@ -541,6 +539,7 @@
     <div class="wrap">
       <div class="nav-mark">Francisco Zenteno Smith</div>
       <nav class="nav-links">
+        <a href="#decision-support">Decision-support</a>
         <a href="#about">About</a>
         <a href="#sefop">SEFOP</a>
         <a href="#experience">Experience</a>
@@ -572,6 +571,25 @@
         </div>
       </div>
       <div class="hero-photo"><img src="assets/img/headshot.jpg" alt="Francisco Zenteno Smith"></div>
+    </div>
+  </section>
+
+  <section id="decision-support" class="reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Decision-support systems</span>
+      </div>
+      <div class="section-body">
+        <p>A decision-support system is software that turns a hard operational choice — what to schedule, how to
+          allocate a limited resource, which plan to choose among thousands of combinations — into a data-driven
+          recommendation, using <strong>mathematical optimization</strong> instead of spreadsheets or guesswork.</p>
+        <p>They show up anywhere a business faces a choice too large for a person to work through by hand: which
+          bags go on which flights, how many cashiers to schedule per store, which staffing plan satisfies every
+          constraint. The system doesn't replace the decision-maker — it narrows thousands of possible answers down
+          to the best one, in seconds.</p>
+        <p>That's the category of software I build: not a one-off analysis, but a system a business runs on every
+          day.</p>
+      </div>
     </div>
   </section>
 
@@ -607,11 +625,11 @@
     <div class="wrap">
       <div class="sefop">
         <div class="sefop-inner">
-          <span class="eyebrow">Open Source</span>
-          <h2>SEFOP — Software Engineering Framework for Optimization</h2>
-          <p>A framework for building optimization systems the way you'd build any production software: Clean
-            Architecture, dependency injection, full test coverage, and CI/CD — not throwaway research scripts.
-            Includes reference implementations across languages and a live, deployed demo.</p>
+          <span class="eyebrow">SEFOP</span>
+          <p><strong>SEFOP</strong> (Software Engineering Framework for Optimization) is a framework for building
+            optimization systems the way you'd build any production software: Clean Architecture, dependency
+            injection, full test coverage, and CI/CD — not throwaway research scripts. Includes reference
+            implementations across languages and a live, deployed demo.</p>
           <a href="https://github.com/sefop" class="btn btn-primary" target="_blank" rel="noopener">See the full
             breakdown →</a>
         </div>
@@ -623,7 +641,6 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">Experience</span>
-        <h2>Where the work has happened</h2>
       </div>
       <div class="timeline">
         <div class="tl-item">
@@ -654,7 +671,7 @@
   <section id="contact" class="reveal">
     <div class="wrap">
       <div class="contact">
-        <h2>Let's talk</h2>
+        <span class="eyebrow">Contact</span>
         <p>The fastest way to reach me is LinkedIn.</p>
         <div class="cta-row">
           <a href="https://www.linkedin.com/in/francisco-zenteno-smith/" class="btn btn-primary" target="_blank"
