@@ -365,7 +365,6 @@
 
     /* ---------- SHARED SECTION BODY ---------- */
     .section-body p,
-    .about-body p,
     .section-body li {
       font-size: 16px;
       color: var(--text-secondary);
@@ -381,8 +380,7 @@
       color: var(--text-secondary);
     }
 
-    .section-body strong,
-    .about-body strong {
+    .section-body strong {
       color: var(--text);
       font-weight: 600;
     }
@@ -485,6 +483,37 @@
       color: var(--text-tertiary);
     }
 
+    /* ---------- SPEAKING ---------- */
+    .speaking-list {
+      list-style: none;
+    }
+
+    .speaking-list li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .speaking-list li:first-child {
+      padding-top: 0;
+    }
+
+    .speaking-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .speaking-title {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 15.5px;
+      margin-bottom: 4px;
+    }
+
+    .speaking-meta {
+      font-size: 13.5px;
+      color: var(--text-tertiary);
+    }
+
     /* ---------- CONTACT ---------- */
     .contact {
       background: var(--bg-alt);
@@ -557,9 +586,9 @@
       <div class="nav-mark">Francisco Zenteno Smith</div>
       <nav class="nav-links">
         <a href="#decision-support">Decision-support systems</a>
-        <a href="#about">About</a>
         <a href="#sefop">SEFOP</a>
         <a href="#experience">Experience</a>
+        <a href="#speaking">Speaking</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </nav>
     </div>
@@ -587,11 +616,10 @@
         <p class="hero-sefop-note">As a result of these efforts, I created <strong>SEFOP</strong>, a Software
           Engineering Framework for Optimization Programs.</p>
         <div class="hero-jump-row">
-          <a href="#decision-support" class="btn btn-secondary">Decision-support systems →</a>
-          <a href="#about" class="btn btn-secondary">About me →</a>
-          <a href="#sefop" class="btn btn-secondary">SEFOP →</a>
-          <a href="#experience" class="btn btn-secondary">Experience →</a>
-          <a href="#contact" class="btn btn-secondary">Contact →</a>
+          <a href="#decision-support" class="btn btn-secondary">Decision-support systems</a>
+          <a href="#sefop" class="btn btn-secondary">SEFOP</a>
+          <a href="#experience" class="btn btn-secondary">Experience</a>
+          <a href="#contact" class="btn btn-secondary">Contact</a>
         </div>
       </div>
     </div>
@@ -621,29 +649,10 @@
         <ul>
           <li>Version control</li>
           <li>Software design & architecture</li>
-          <li>Test-driven development</li>
+          <li>Automated testing</li>
           <li>DevOps</li>
         </ul>
         </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="reveal">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">About me</span>
-      </div>
-      <div class="about-body">
-        <p>With a decade of experience applying operations research across airlines, retail, mining, cargo, and
-          healthcare, I bridge two disciplines that are too often kept separate: <strong>mathematical
-            optimization</strong>
-          and <strong>software engineering</strong>. As operation research scientists we deliver our value through code,
-          thus
-          we need to apply the same rigorous standards of software engineering to our work.</p>
-
-        <p>I hold dual master's degrees in <strong>Computer Science</strong> (UC San Diego) and <strong>Industrial
-            Engineering</strong> (Pontificia Universidad Católica de Chile). </p>
       </div>
     </div>
   </section>
@@ -658,7 +667,7 @@
             injection, full test coverage, and CI/CD, not throwaway research scripts. Includes reference
             implementations across languages and a live, deployed demo.</p>
           <a href="https://github.com/sefop" class="btn btn-primary" target="_blank" rel="noopener">See the full
-            breakdown →</a>
+            breakdown</a>
         </div>
       </div>
     </div>
@@ -695,6 +704,54 @@
     </div>
   </section>
 
+  <section id="speaking" class="reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Speaking</span>
+      </div>
+      <ul class="speaking-list">
+        <li>
+          <div class="speaking-title">SEFOP: A Software Engineering Framework for Optimization Programs</div>
+          <div class="speaking-meta">INFORMS Annual Meeting · San Francisco, CA · Nov 2026</div>
+        </li>
+        <li>
+          <div class="speaking-title">Why Operations Research Practitioners Resist Software Engineering Practices,
+            and What Changes Their Behavior</div>
+          <div class="speaking-meta">Decision Sciences Institute (DSI) Annual Conference · Nov 2026</div>
+        </li>
+        <li>
+          <div class="speaking-title">Real-World Challenges When Developing Optimization Software (workshop)</div>
+          <div class="speaking-meta">Graduate Seminar IME 5507, California Polytechnic State University · San Luis
+            Obispo, CA · Sept 2026</div>
+        </li>
+        <li>
+          <div class="speaking-title">Agentic AI and the Future of Optimization Development</div>
+          <div class="speaking-meta">JetBlue · July 2026</div>
+        </li>
+        <li>
+          <div class="speaking-title">Operations Research Meets Software Engineering (workshop)</div>
+          <div class="speaking-meta">Secquoia Lab, Purdue University · West Lafayette, IN · June 2026</div>
+        </li>
+        <li>
+          <div class="speaking-title">Faster Delivery Through Higher Quality: Toward Agentic Development in
+            Decision-Support Software</div>
+          <div class="speaking-meta">Agentic Quality Summit · Atlanta, GA · 2026</div>
+        </li>
+        <li>
+          <div class="speaking-title">From Idea to Daily Reality: How Operations Research Powers American Airlines'
+            Maintenance Supply Chain Every Day</div>
+          <div class="speaking-meta">Guest Speaker, OPRE 4393 (AI for Supply Chain Management), University of Texas
+            at Dallas · May 2020</div>
+        </li>
+        <li>
+          <div class="speaking-title">Deploying with Confidence: Automated Software Testing Strategies for
+            Optimization Models</div>
+          <div class="speaking-meta">INFORMS Annual Meeting & MIP Workshop, Chile · 2025</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <section id="contact" class="reveal">
     <div class="wrap">
       <div class="contact">
@@ -702,7 +759,7 @@
         <p>Reach out to me on LinkedIn, or drop me an email.</p>
         <div class="cta-row">
           <a href="https://www.linkedin.com/in/francisco-zenteno-smith/" class="btn btn-primary" target="_blank"
-            rel="noopener">Connect on LinkedIn →</a>
+            rel="noopener">Connect on LinkedIn</a>
           <a href="mailto:zenteno.fco@gmail.com" class="btn btn-secondary">zenteno.fco@gmail.com</a>
         </div>
       </div>
