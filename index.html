@@ -365,10 +365,16 @@
 
     /* ---------- SHARED SECTION BODY ---------- */
     .section-body p,
-    .about-body p {
+    .about-body p,
+    .section-body li {
       font-size: 16px;
       color: var(--text-secondary);
       margin-bottom: 16px;
+    }
+
+    .section-body li {
+      margin-bottom: 6px;
+      margin-left: 20px;
     }
 
     .section-body strong,
@@ -593,16 +599,21 @@
         <span class="eyebrow">What is a decision-support system?</span>
       </div>
       <div class="section-body">
-        <p>A decision-support system is software that turns a hard operational choice, such as what to schedule, how
-          to allocate a limited resource, or which plan to choose among thousands of combinations, into a
-          data-driven recommendation, using <strong>mathematical optimization</strong> instead of spreadsheets or
-          guesswork.</p>
-        <p>They show up anywhere a business faces a choice too large for a person to work through by hand: which
-          bags go on which flights, how many cashiers to schedule per store, which staffing plan satisfies every
-          constraint. The system doesn't replace the decision-maker. It narrows thousands of possible answers down
-          to the best one, in seconds.</p>
-        <p>That's the category of software I build: not a one-off analysis, but a system a business runs on every
-          day.</p>
+        <p>A decision-support system (DSS) is a software that supports business or organizational decision-making
+          activities. A DSS can help in operational, tactical, and strategic decisions. A DSS is typically
+          <strong>executed at some frequency</strong>, such as daily, weekly, or monthly. Some examples problems that
+          can be solved with a DSS include:
+        <ul>
+          <li>Scheduling the employees shifts of a retail store.</li>
+          <li>Planning the delivery of cargo across a network.</li>
+          <li>Optimizing the allocation of hospital beds and medical appointments.</li>
+          <li>Planning the production of goods in a factory.</li>
+          <li>Scheduling maintenance tasks for a fleet of vehicles.</li>
+          <li>Planning the extraction of resources from a mine.</li>
+          <li>Forecasting demand for products.</li>
+          <li>Recovering from weather disruptions in an airline.</li>
+        </ul>
+        </p>
       </div>
     </div>
   </section>
