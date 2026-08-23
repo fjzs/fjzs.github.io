@@ -217,14 +217,13 @@
 
     .hero-caps {
       list-style: none;
-      max-width: 50ch;
       margin-bottom: 16px;
     }
 
     .hero-sefop-note {
       font-size: 17px;
       color: var(--text-secondary);
-      margin-bottom: 16px;
+      margin-bottom: 28px;
     }
 
     .hero-sefop-note strong {
@@ -235,6 +234,7 @@
     .hero-jump-row {
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       gap: 14px;
       margin-bottom: 28px;
     }
@@ -345,16 +345,11 @@
 
     /* ---------- SECTION SHARED ---------- */
     section {
-      padding: 88px 0;
-    }
-
-    #decision-support {
-      padding-top: 32px;
+      padding: 32px 0;
     }
 
     .section-head {
       margin-bottom: 44px;
-      max-width: 62ch;
     }
 
     .section-head .eyebrow {
@@ -374,7 +369,6 @@
       font-size: 16px;
       color: var(--text-secondary);
       margin-bottom: 16px;
-      max-width: 64ch;
     }
 
     .section-body strong,
@@ -408,9 +402,6 @@
       padding: 56px;
     }
 
-    .sefop-inner {
-      max-width: 60ch;
-    }
 
     .sefop .eyebrow {
       color: #8FB0FF;
@@ -420,7 +411,6 @@
       color: #B7BCC6;
       font-size: 15.5px;
       margin-bottom: 24px;
-      max-width: 52ch;
     }
 
     .sefop p strong {
@@ -534,7 +524,7 @@
 
     footer .wrap {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       font-family: var(--font-mono);
       font-size: 12.5px;
@@ -598,12 +588,11 @@
         <ul class="hero-caps">
           <li><strong>Deliver</strong> end-to-end decision-support software.</li>
           <li><strong>Modernize</strong> legacy systems into production-grade platforms.</li>
-          <li><strong>Lead</strong> and train data scientists to build systems with professional engineering
-            standards.</li>
+          <li><strong>Lead</strong> and <strong>train</strong> data scientists to build systems with professional
+            engineering standards.</li>
         </ul>
         <p class="hero-sefop-note">As a result of these efforts, I created <strong>SEFOP</strong>, a Software
-          Engineering
-          Framework for Optimization Programs.</p>
+          Engineering Framework for Optimization Programs.</p>
         <div class="hero-jump-row">
           <a href="#decision-support" class="btn btn-secondary">Decision-support systems →</a>
           <a href="#about" class="btn btn-secondary">About me →</a>
@@ -725,7 +714,6 @@
   <footer>
     <div class="wrap">
       <span>© 2026 Francisco Zenteno Smith</span>
-      <a href="https://github.com/sefop" target="_blank" rel="noopener">github.com/sefop</a>
     </div>
   </footer>
 
