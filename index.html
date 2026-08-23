@@ -413,6 +413,38 @@
       background: var(--accent);
     }
 
+    .sefop-pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .sefop-pillar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 10px;
+      background: rgba(31, 79, 209, 0.18);
+      border: 1px solid rgba(143, 176, 255, 0.35);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .sefop-pillar svg {
+      width: 26px;
+      height: 26px;
+      color: #8FB0FF;
+      flex-shrink: 0;
+    }
+
+    .sefop-pillar span {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+    }
+
     @media (max-width: 860px) {
       .sefop {
         padding: 36px 24px;
@@ -474,6 +506,11 @@
       color: var(--text-secondary);
       padding-left: 18px;
       position: relative;
+      margin-bottom: 6px;
+    }
+
+    .tl-highlight:last-child {
+      margin-bottom: 0;
     }
 
     .tl-highlight::before {
@@ -663,10 +700,47 @@
       <div class="sefop">
         <div class="sefop-inner">
           <span class="eyebrow">SEFOP</span>
-          <p><strong>SEFOP</strong> (Software Engineering Framework for Optimization) is a framework for building
-            optimization systems the way you'd build any production software: Clean Architecture, dependency
-            injection, full test coverage, and CI/CD, not throwaway research scripts. Includes reference
-            implementations across languages and a live, deployed demo.</p>
+          <p><strong>SEFOP</strong> (Software Engineering Framework for Optimization) gives engineering managers four
+            foundations, tailored specifically for decision-support systems, to maximize the business value of their
+            operations research teams: <strong>Teach</strong> the software-engineering practices these systems
+            demand, <strong>Deliver</strong> that work efficiently, <strong>Lead</strong> a team that builds to
+            those standards, and <strong>Go Agentic</strong> to benefit from agentic development.</p>
+          <div class="sefop-pillars">
+            <div class="sefop-pillar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M4 5.5C4 4.67 4.67 4 5.5 4H11a2 2 0 0 1 2 2v14a1.5 1.5 0 0 0-1.5-1.5H4V5.5Z" />
+                <path d="M20 5.5C20 4.67 19.33 4 18.5 4H13a2 2 0 0 0-2 2v14a1.5 1.5 0 0 1 1.5-1.5H20V5.5Z" />
+              </svg>
+              <span>Teach</span>
+            </div>
+            <div class="sefop-pillar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 2c2.5 2 4 5.5 4 9 0 2-1 4-1 4H9s-1-2-1-4c0-3.5 1.5-7 4-9Z" />
+                <path d="M9 15l-3 3 1 3 3-1" />
+                <path d="M15 15l3 3-1 3-3-1" />
+                <circle cx="12" cy="9" r="1.5" />
+              </svg>
+              <span>Deliver</span>
+            </div>
+            <div class="sefop-pillar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M5 21V4" />
+                <path d="M5 4h13l-3 4 3 4H5" />
+              </svg>
+              <span>Lead</span>
+            </div>
+            <div class="sefop-pillar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M3 17l6-6 4 4 8-8" />
+                <path d="M15 6h6v6" />
+              </svg>
+              <span>Go Agentic</span>
+            </div>
+          </div>
           <a href="https://github.com/sefop" class="btn btn-primary" target="_blank" rel="noopener">See the full
             breakdown</a>
         </div>
@@ -681,16 +755,29 @@
       </div>
       <div class="timeline">
         <div class="tl-item">
-          <div class="tl-date">2024 - Present</div>
+          <div class="tl-date">2025 - Present</div>
           <div class="tl-role">Senior Operations Research Scientist</div>
+          <div class="tl-org">American Airlines</div>
+          <p class="tl-highlight">Leading American's baggage-optimization portfolio, the full suite of optimization
+            solutions across baggage operations.</p>
+          <p class="tl-highlight">Drove a 4x increase in the science team's delivery productivity by leading its
+            adoption of agentic and software-engineering practices.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2024 - 2025</div>
+          <div class="tl-role">Operations Research Scientist</div>
           <div class="tl-org">American Airlines</div>
           <p class="tl-highlight">Led the year-long refactor of a legacy decision-support system, cutting technical
             debt 67% by teaching the team software-engineering principles.</p>
+          <p class="tl-highlight">Designed a framework that cut experimentation runtime 93% and raised optimization
+            models' unit-test coverage to 95%.</p>
         </div>
         <div class="tl-item">
           <div class="tl-date">2017 - 2020</div>
           <div class="tl-role">Senior Data Scientist</div>
           <div class="tl-org">SMU</div>
+          <p class="tl-highlight">Led and mentored a team of 3 data scientists across forecasting, operational
+            efficiency, and workforce scheduling.</p>
           <p class="tl-highlight">Built a simulated-annealing metaheuristic that shipped a monthly
             cashier-scheduling system to production for 350 stores, without commercial optimization software.</p>
         </div>
@@ -700,6 +787,8 @@
           <div class="tl-org">Shift Workforce Management</div>
           <p class="tl-highlight">Designed a multi-objective staff-planning model reused across 20+ consultancies
             for enterprise clients.</p>
+          <p class="tl-highlight">Deployed new production features into a large-scale optimization model for
+            enterprise clients across Latin America.</p>
         </div>
       </div>
     </div>
