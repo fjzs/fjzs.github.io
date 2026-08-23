@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Francisco Zenteno Smith — Operations Research × Software Engineering</title>
+  <title>Decision-support systems — Francisco Zenteno Smith</title>
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -157,10 +157,25 @@
     }
 
     .hero .wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-top {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       gap: 48px;
       align-items: center;
+    }
+
+    .hero-below {
+      margin-top: 16px;
+    }
+
+    @media (max-width: 860px) {
+      .hero-top {
+        grid-template-columns: 1fr;
+      }
     }
 
     .eyebrow {
@@ -172,6 +187,7 @@
       color: var(--accent);
       margin-bottom: 20px;
       display: inline-block;
+      white-space: nowrap;
     }
 
     .hero .eyebrow {
@@ -208,13 +224,31 @@
     .hero-sefop-note {
       font-size: 17px;
       color: var(--text-secondary);
-      max-width: 50ch;
-      margin-bottom: 28px;
+      margin-bottom: 16px;
     }
 
     .hero-sefop-note strong {
       color: var(--text);
       font-weight: 600;
+    }
+
+    .hero-jump-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .hero-jump-row .btn {
+      background: var(--accent);
+      color: #fff;
+      border-color: transparent;
+      font-size: 15px;
+    }
+
+    .hero-jump-row .btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
     }
 
     .hero-caps li {
@@ -298,10 +332,6 @@
     }
 
     @media (max-width: 860px) {
-      .hero .wrap {
-        grid-template-columns: 1fr;
-      }
-
       .hero-photo {
         max-width: 240px;
         order: -1;
@@ -316,6 +346,10 @@
     /* ---------- SECTION SHARED ---------- */
     section {
       padding: 88px 0;
+    }
+
+    #decision-support {
+      padding-top: 32px;
     }
 
     .section-head {
@@ -539,7 +573,7 @@
     <div class="wrap">
       <div class="nav-mark">Francisco Zenteno Smith</div>
       <nav class="nav-links">
-        <a href="#decision-support">Decision-support</a>
+        <a href="#decision-support">Decision-support systems</a>
         <a href="#about">About</a>
         <a href="#sefop">SEFOP</a>
         <a href="#experience">Experience</a>
@@ -550,11 +584,17 @@
 
   <section class="hero">
     <div class="wrap">
-      <div>
-        <span class="eyebrow">Applied Operations Research & Software Engineering</span>
-        <h1>Decision-support systems with professional engineering standards</h1>
-        <p class="hero-sub">I'm Francisco Zenteno Smith, an operations research scientist with a decade of experience. I
-          can:</p>
+      <div class="hero-top">
+        <div>
+          <span class="eyebrow">Applied Operations Research & Software Engineering</span>
+          <h1>Decision-support systems with professional engineering standards</h1>
+          <p class="hero-sub">I'm Francisco Zenteno Smith, an operations research scientist with a decade of
+            experience building decision-support software.</p>
+        </div>
+        <div class="hero-photo"><img src="assets/img/headshot.jpg" alt="Francisco Zenteno Smith"></div>
+      </div>
+      <div class="hero-below">
+        <p class="hero-sub">I can:</p>
         <ul class="hero-caps">
           <li><strong>Deliver</strong> end-to-end decision-support software.</li>
           <li><strong>Modernize</strong> legacy systems into production-grade platforms.</li>
@@ -564,20 +604,21 @@
         <p class="hero-sefop-note">As a result of these efforts, I created <strong>SEFOP</strong>, a Software
           Engineering
           Framework for Optimization Programs.</p>
-        <div class="cta-row">
-          <a href="#sefop" class="btn btn-primary">Explore SEFOP →</a>
-          <a href="https://www.linkedin.com/in/francisco-zenteno-smith/" class="btn btn-secondary" target="_blank"
-            rel="noopener">Connect on LinkedIn</a>
+        <div class="hero-jump-row">
+          <a href="#decision-support" class="btn btn-secondary">Decision-support systems →</a>
+          <a href="#about" class="btn btn-secondary">About me →</a>
+          <a href="#sefop" class="btn btn-secondary">SEFOP →</a>
+          <a href="#experience" class="btn btn-secondary">Experience →</a>
+          <a href="#contact" class="btn btn-secondary">Contact →</a>
         </div>
       </div>
-      <div class="hero-photo"><img src="assets/img/headshot.jpg" alt="Francisco Zenteno Smith"></div>
     </div>
   </section>
 
   <section id="decision-support" class="reveal">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Decision-support systems</span>
+        <span class="eyebrow">What is a decision-support system?</span>
       </div>
       <div class="section-body">
         <p>A decision-support system is software that turns a hard operational choice — what to schedule, how to
