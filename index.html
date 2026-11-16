@@ -452,6 +452,55 @@
       }
     }
 
+    /* ---------- PROJECTS ---------- */
+    .project-grid {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .project-media {
+      aspect-ratio: 4 / 3;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--bg-deep);
+    }
+
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover .project-media img {
+      transform: scale(1.04);
+    }
+
+    .project-caption {
+      margin-top: 14px;
+      font-size: 15.5px;
+      font-weight: 500;
+      line-height: 1.45;
+      color: var(--text);
+    }
+
+    @media (max-width: 860px) {
+      .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ---------- EXPERIENCE ---------- */
     .timeline {
       border-left: 2px solid var(--border);
@@ -624,6 +673,7 @@
       <nav class="nav-links">
         <a href="#decision-support">Decision-support systems</a>
         <a href="#sefop">SEFOP</a>
+        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#speaking">Speaking</a>
         <a href="#contact" class="nav-cta">Contact</a>
@@ -655,6 +705,7 @@
         <div class="hero-jump-row">
           <a href="#decision-support" class="btn btn-secondary">Decision-support systems</a>
           <a href="#sefop" class="btn btn-secondary">SEFOP</a>
+          <a href="#projects" class="btn btn-secondary">Projects</a>
           <a href="#experience" class="btn btn-secondary">Experience</a>
           <a href="#speaking" class="btn btn-secondary">Speaking</a>
           <a href="#contact" class="btn btn-secondary">Contact</a>
@@ -744,6 +795,63 @@
           <a href="https://github.com/sefop" class="btn btn-primary" target="_blank" rel="noopener">Go to SEFOP</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Projects</span>
+      </div>
+      <!-- To add a project: drop a landscape image (about 1200x900) in assets/img/projects/,
+           then copy one <li> and edit its src, alt and caption. -->
+      <ul class="project-grid">
+        <li class="project-card">
+          <div class="project-media"><img src="assets/img/projects/placeholder.svg" alt="SWAP" loading="lazy"></div>
+          <p class="project-caption">SWAP: one sentence describing the project goes here.</p>
+        </li>
+        <li class="project-card">
+          <div class="project-media"><img src="assets/img/projects/placeholder.svg" alt="Sales forecasting"
+              loading="lazy"></div>
+          <p class="project-caption">Forecasting retail sales to give staffing and operational planning a reliable
+            demand signal.</p>
+        </li>
+        <li class="project-card">
+          <div class="project-media"><img src="assets/img/projects/placeholder.svg" alt="Shift scheduling"
+              loading="lazy"></div>
+          <p class="project-caption">Scheduling monthly cashier shifts for 350 stores with a simulated-annealing
+            metaheuristic, without commercial optimization software.</p>
+        </li>
+        <li class="project-card">
+          <div class="project-media"><img src="assets/img/projects/placeholder.svg" alt="Workforce planning"
+              loading="lazy"></div>
+          <p class="project-caption">A multi-objective staff-planning model reused across 20+ consultancies for
+            enterprise clients.</p>
+        </li>
+        <li class="project-card">
+          <div class="project-media"><img src="assets/img/projects/placeholder.svg"
+              alt="Truck dispatching in a copper mine" loading="lazy"></div>
+          <p class="project-caption">Dispatching haul trucks in a copper mine to raise throughput and lower the
+            cost per ton.</p>
+        </li>
+        <li class="project-card">
+          <div class="project-media"><img src="assets/img/projects/placeholder.svg"
+              alt="Capacity optimization in a port" loading="lazy"></div>
+          <p class="project-caption">Using simulation to measure and increase the cargo capacity of a port.</p>
+        </li>
+        <li class="project-card">
+          <div class="project-media"><img src="assets/img/projects/placeholder.svg"
+              alt="Joint optimization of supply and demand in a cinema" loading="lazy"></div>
+          <p class="project-caption">Optimizing a cinema's supply and demand together, instead of planning each
+            one separately.</p>
+        </li>
+        <li class="project-card">
+          <div class="project-media"><img src="assets/img/projects/placeholder.svg" alt="Airport bag routing"
+              loading="lazy"></div>
+          <p class="project-caption">Routing checked bags through an airport so they reach their connecting
+            flights on time.</p>
+        </li>
+      </ul>
     </div>
   </section>
 

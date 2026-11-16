@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#DCE1E8" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="#E9ECF1"/>
+  <rect width="400" height="300" fill="url(#grid)"/>
+  <g transform="translate(176 126)" fill="none" stroke="#8891A0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="48" height="40" rx="5"/>
+    <circle cx="15" cy="13" r="4"/>
+    <path d="M2 36l14-14 10 10 7-7 13 13"/>
+  </g>
+</svg>
