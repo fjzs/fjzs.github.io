@@ -456,8 +456,8 @@
     .project-grid {
       list-style: none;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 32px;
     }
 
     .project-media {
@@ -480,18 +480,27 @@
       transform: scale(1.04);
     }
 
-    .project-caption {
+    .project-title {
       margin-top: 14px;
-      font-size: 15.5px;
-      font-weight: 500;
-      line-height: 1.45;
+      font-family: var(--font-display);
+      font-size: 16.5px;
+      font-weight: 600;
+      line-height: 1.3;
       color: var(--text);
+    }
+
+    .project-caption {
+      margin-top: 6px;
+      font-size: 15px;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--text-secondary);
     }
 
     @media (max-width: 860px) {
       .project-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
+        gap: 28px 22px;
       }
     }
 
@@ -808,47 +817,51 @@
       <ul class="project-grid">
         <li class="project-card">
           <div class="project-media"><img src="assets/img/projects/placeholder.svg" alt="SWAP" loading="lazy"></div>
-          <p class="project-caption">SWAP: one sentence describing the project goes here.</p>
+          <h3 class="project-title">SWAP</h3>
+          <p class="project-caption">Swapping aircraft and routes for short-term operational efficiency.</p>
         </li>
         <li class="project-card">
           <div class="project-media"><img src="assets/img/projects/placeholder.svg" alt="Sales forecasting"
               loading="lazy"></div>
+          <h3 class="project-title">Sales forecasting</h3>
           <p class="project-caption">Forecasting retail sales to give staffing and operational planning a reliable
             demand signal.</p>
         </li>
         <li class="project-card">
           <div class="project-media"><img src="assets/img/projects/placeholder.svg" alt="Shift scheduling"
               loading="lazy"></div>
-          <p class="project-caption">Scheduling monthly cashier shifts for 350 stores with a simulated-annealing
-            metaheuristic, without commercial optimization software.</p>
+          <h3 class="project-title">Shift scheduling</h3>
+          <p class="project-caption">Scheduling monthly cashier shifts at the hourly-level. </p>
         </li>
         <li class="project-card">
           <div class="project-media"><img src="assets/img/projects/placeholder.svg" alt="Workforce planning"
               loading="lazy"></div>
-          <p class="project-caption">A multi-objective staff-planning model reused across 20+ consultancies for
-            enterprise clients.</p>
+          <h3 class="project-title">Workforce planning</h3>
+          <p class="project-caption">Deciding staff size for each type for a given horizon.</p>
         </li>
         <li class="project-card">
           <div class="project-media"><img src="assets/img/projects/placeholder.svg"
               alt="Truck dispatching in a copper mine" loading="lazy"></div>
-          <p class="project-caption">Dispatching haul trucks in a copper mine to raise throughput and lower the
-            cost per ton.</p>
+          <h3 class="project-title">Truck dispatching in mining</h3>
+          <p class="project-caption">Efficient routing and dispatching of trucks in a copper mine</p>
         </li>
         <li class="project-card">
           <div class="project-media"><img src="assets/img/projects/placeholder.svg"
               alt="Capacity optimization in a port" loading="lazy"></div>
-          <p class="project-caption">Using simulation to measure and increase the cargo capacity of a port.</p>
+          <h3 class="project-title">Port capacity optimization</h3>
+          <p class="project-caption">Using simulation to increase the cargo capacity of a port.</p>
         </li>
         <li class="project-card">
           <div class="project-media"><img src="assets/img/projects/placeholder.svg"
               alt="Joint optimization of supply and demand in a cinema" loading="lazy"></div>
-          <p class="project-caption">Optimizing a cinema's supply and demand together, instead of planning each
-            one separately.</p>
+          <h3 class="project-title">Joint optimization of supply and demand in a cinema</h3>
+          <p class="project-caption">Optimizing a cinema's cashier's shifts and movie schedules together.</p>
         </li>
         <li class="project-card">
           <div class="project-media"><img src="assets/img/projects/placeholder.svg" alt="Airport bag routing"
               loading="lazy"></div>
-          <p class="project-caption">Routing checked bags through an airport so they reach their connecting
+          <h3 class="project-title">Airport bag routing</h3>
+          <p class="project-caption">Routing checked and transfer bags through an airport so they reach their connecting
             flights on time.</p>
         </li>
       </ul>
